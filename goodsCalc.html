@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="body.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="center">
+            <div>
+                <img src="logo.jpg" height='177' width="1200"\>
+            </div>
+            <div class="title">Production calculator</div>
+            <div class="nav">
+                <ol>
+                    <li class="activelink"><a href="">Calculator</a></li>
+                    <li><a href="">Production chains</a></li>
+                    <li><a href="">Supply</a></li>
+                    <li><a href="">Client</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Imprint</a></li>
+                    <li><a href="">Donate</a></li>
+                </ol>
+                <ul>
+                    <li>Language:</li>
+                    <li>
+                        <select>
+                            <option value="de">Deutch</option>
+                            <option value="en">English</option>
+                            <option value="fr">Francias</option>
+                            <option value="ru">Русский</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="inputFrame">
+            <div class="inhabitants">
+                <ol style="padding-right: 5px; border-right: 1px solid #cecece;">
+                    <li>
+                        <ul>
+                            <li>
+                                <input type="radio" name="switchRadio" value="inhabitants" checked="checked" alt\>
+                            </li>
+                            <li> 
+                                <img src="images/inhabitants/iconInhabitants.png" alt="iconInhabitants">
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <input type="radio" name="switchRadio" value="inhabitants" checked="checked" alt\>
+                            </li>
+                            <li> 
+                                <img src="images/inhabitants/iconHouse.png" alt="iconHouse">
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <ul>
+                            <li>
+                                <img src="images/inhabitants/iconBeggar.png" alt="iconBeggar">
+                            </li>
+                            <li>Beggar</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <input type="radio" name="cBeggarRadio" class="inhabitantsRadio" value="inhabitants" checked="checked" alt="">
+                            </li>
+                            <li>
+                                <img src="images/inhabitants/iconInhabitants.png" alt="iconInhabitants">
+                            </li>
+                            <li>
+                                <input type="number" name="cBeggar" value="0" class="cText cTextwidth saveinput inhabitantInput" maxlength="6" tabindex="1" alt="">
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cBeggarRadio" class="HouseRadio" value="House" alt=""></li>
+                            <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cBeggarHouse" value="0" class="cText cTextwidth saveinput HouseInput" maxlength="6" alt=""></li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <ul>
+                            <li><img src="images/inhabitants/iconPeasant.png" height="46" width="46" alt=""></li>
+                            <li>Peasant</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cPeasantRadio" class="inhabitantsRadio" value="inhabitants" checked="checked" alt=""></li>
+                            <li><img src="images/inhabitants/iconInhabitants.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cPeasant" value="0" class="cText cTextwidth saveinput inhabitantsInput" maxlength="6" tabindex="2" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cPeasantRadio" class="houseRadio" value="house" alt=""></li>
+                            <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cPeasantHouse" value="0" class="cText cTextwidth saveinput houseInput" maxlength="6" alt="" disabled="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);"></li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <ul>
+                            <li><img src="images/inhabitants/iconCitizen.png" height="46" width="46" alt=""></li>
+                            <li>Citizen</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cCitizenRadio" class="inhabitantsRadio" value="inhabitants" checked="checked" alt=""></li>
+                            <li><img src="images/inhabitants/iconInhabitants.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cCitizen" value="0" class="cText cTextwidth saveinput inhabitantsInput" maxlength="6" tabindex="3" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cCitizenRadio" class="houseRadio" value="house" alt=""></li>
+                            <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cCitizenHouse" value="0" class="cText cTextwidth saveinput houseInput" maxlength="6" alt="" disabled="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);"></li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <ul>
+                            <li><img src="images/inhabitants/iconPatrician.png" height="46" width="46" alt=""></li>
+                            <li>Patrician</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cPatricianRadio" class="inhabitantsRadio" value="inhabitants" checked="checked" alt=""></li>
+                            <li><img src="images/inhabitants/iconInhabitants.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cPatrician" value="0" class="cText cTextwidth saveinput inhabitantsInput" maxlength="6" tabindex="4" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cPatricianRadio" class="houseRadio" value="house" alt=""></li>
+                            <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cPatricianHouse" value="0" class="cText cTextwidth saveinput houseInput" maxlength="6" alt="" disabled="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);"></li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <ul>
+                            <li><img src="images/inhabitants/iconNobleman.png" height="46" width="46" alt=""></li>
+                            <li>Noblemen</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cNoblemanRadio" class="inhabitantsRadio" value="inhabitants" checked="checked" alt=""></li>
+                            <li><img src="images/inhabitants/iconInhabitants.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cNobleman" value="0" class="cText cTextwidth saveinput inhabitantsInput" maxlength="6" tabindex="5" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cNoblemanRadio" class="houseRadio" value="house" alt=""></li>
+                            <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cNoblemanHouse" value="0" class="cText cTextwidth saveinput houseInput" maxlength="6" alt="" disabled="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);"></li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <ul>
+                            <li><img src="images/inhabitants/iconNomad.png" height="46" width="46" alt=""></li>
+                            <li>Nomads</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cNomadRadio" class="inhabitantsRadio" value="inhabitants" checked="checked" alt=""></li>
+                            <li><img src="images/inhabitants/iconInhabitants.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cNomad" value="0" class="cText cTextwidth saveinput inhabitantsInput" maxlength="6" tabindex="6" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cNomadRadio" class="houseRadio" value="house" alt=""></li>
+                            <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cNomadHouse" value="0" class="cText cTextwidth saveinput houseInput" maxlength="6" alt="" disabled="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);"></li>
+                        </ul>
+                    </li>
+                </ol>
+                <ol>
+                    <li>
+                        <ul>
+                            <li><img src="images/inhabitants/iconEnvoy.png" height="46" width="46" alt=""></li>
+                            <li>Envoys</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cEnvoyRadio" class="inhabitantsRadio" value="inhabitants" checked="checked" alt=""></li>
+                            <li><img src="images/inhabitants/iconInhabitants.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cEnvoy" value="0" class="cText cTextwidth saveinput inhabitantsInput" maxlength="6" tabindex="7" alt=""></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><input type="radio" name="cEnvoyRadio" class="houseRadio" value="house" alt=""></li>
+                            <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
+                            <li><input type="text" name="cEnvoyHouse" value="0" class="cText cTextwidth saveinput houseInput" maxlength="6" alt="" disabled="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);"></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="items">
+                <ol>
+            <li><img src="images/goods/iconFisch.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_1" id="itemselect_1" class="itemselect saveinput" onchange="$('#itemresult_1').text($('#itemselect_1').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_1" class="itemresult">25</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconGewuerze.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_12" id="itemselect_12" class="itemselect saveinput" onchange="$('#itemresult_12').text($('#itemselect_12').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_12" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconBrot.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_9" id="itemselect_9" class="itemselect saveinput" onchange="$('#itemresult_9').text($('#itemselect_9').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_9" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconFleisch.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_11" id="itemselect_11" class="itemselect saveinput" onchange="$('#itemresult_11').text($('#itemselect_11').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_11" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconMost.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_4" id="itemselect_4" class="itemselect saveinput" onchange="$('#itemresult_4').text($('#itemselect_4').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_4" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconBier.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_3" id="itemselect_3" class="itemselect saveinput" onchange="$('#itemresult_3').text($('#itemselect_3').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_3" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconWein.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_20" id="itemselect_20" class="itemselect saveinput" onchange="$('#itemresult_20').text($('#itemselect_20').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_20" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconLeinenkutten.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_6" id="itemselect_6" class="itemselect saveinput" onchange="$('#itemresult_6').text($('#itemselect_6').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_6" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconLederwaemse.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_17" id="itemselect_17" class="itemselect saveinput" onchange="$('#itemresult_17').text($('#itemselect_17').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_17" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconPelzmaentel.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_18" id="itemselect_18" class="itemselect saveinput" onchange="$('#itemresult_18').text($('#itemselect_18').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_18" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconBrokatgewaender.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_16" id="itemselect_16" class="itemselect saveinput" onchange="$('#itemresult_16').text($('#itemselect_16').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_16" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconBuecher.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_2" id="itemselect_2" class="itemselect saveinput" onchange="$('#itemresult_2').text($('#itemselect_2').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_2" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconKerzenleuchter.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_10" id="itemselect_10" class="itemselect saveinput" onchange="$('#itemresult_10').text($('#itemselect_10').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_10" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconBrillen.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_19" id="itemselect_19" class="itemselect saveinput" onchange="$('#itemresult_19').text($('#itemselect_19').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_19" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconDatteln.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_13" id="itemselect_13" class="itemselect saveinput" onchange="$('#itemresult_13').text($('#itemselect_13').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_13" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconMilch.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_14" id="itemselect_14" class="itemselect saveinput" onchange="$('#itemresult_14').text($('#itemselect_14').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_14" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconTeppiche.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_5" id="itemselect_5" class="itemselect saveinput" onchange="$('#itemresult_5').text($('#itemselect_5').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_5" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconKaffee.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_8" id="itemselect_8" class="itemselect saveinput" onchange="$('#itemresult_8').text($('#itemselect_8').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_8" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconPerlenketten.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_15" id="itemselect_15" class="itemselect saveinput" onchange="$('#itemresult_15').text($('#itemselect_15').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_15" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconDuftwasser.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_21" id="itemselect_21" class="itemselect saveinput" onchange="$('#itemresult_21').text($('#itemselect_21').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_21" class="itemresult">0</span>%</li>
+        </ol>
+                <ol>
+            <li><img src="images/goods/iconMarzipan.png" height="32" width="32" alt=""></li>
+            <li>
+                <select name="itemselect_7" id="itemselect_7" class="itemselect saveinput" onchange="$('#itemresult_7').text($('#itemselect_7').val()*25.00)">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </li>
+            <li>+<span id="itemresult_7" class="itemresult">0</span>%</li>
+        </ol>
+        </div>
+            <div class="cmd floatright">
+                <ol>
+                    <li>
+                        <label>Evolution:</label> <input type="checkbox" name="evocheck" checked="checked" alt=""> 
+                    </li>
+                    <li>
+                        <div onclick="javascript:saveinput();" class="button_2">
+                            <div class="button_2_left"></div>
+                            <div class="button_2_center">Save</div>
+                            <div class="button_2_right"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick="javascript:loadinput();" class="button_2">
+                            <div class="button_2_left"></div>
+                            <div class="button_2_center">Load</div>
+                            <div class="button_2_right"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick="$('div#importFrame').fadeIn('slow');" class="button_2">
+                            <div class="button_2_left"></div>
+                            <div class="button_2_center">Import</div>
+                            <div class="button_2_right"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick="javascript:resetform();" class="button_2">
+                            <div class="button_2_left"></div>
+                            <div class="button_2_center">Reset</div>
+                            <div class="button_2_right"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick="javascript:calcform();" class="button_2">
+                            <div class="button_2_left"></div>
+                            <div class="button_2_center">Calculate</div>
+                            <div class="button_2_right"></div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <h1>Production needs</h1>
+        <h2>Shows the number of production chains needed to satisfy your inhabitants demands</h2>
+        <div id="result">
+            <div class="cmd floatright" style="margin-bottom:5px;">
+                <ol>
+                    <li>
+                        <div onclick="javascript:saveresult();" class="button_2">
+                            <div class="button_2_left"></div>
+                            <div class="button_2_center">Memorize</div>
+                            <div class="button_2_right"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div onclick="javascript:compareresult();" class="button_2">
+                            <div class="button_2_left"></div>
+                            <div class="button_2_center">Compare</div>
+                            <div class="button_2_right"></div>
+                        </div>
+                    </li>
+                </ol>
+        </div><div style="clear:both;"></div>	
+        
+        <table class="bordertable">
+            <tbody><tr>
+                <th></th>
+                <td colspan="14" style="background-color:#cdedbf;">Required in the Occident</td>
+                <td colspan="7" style="background-color:#fff2ad;">Required in the Orient</td>
+            </tr>
+            <tr>
+                <th></th>
+                        <td>
+                    <img src="images/goods/iconFisch.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconGewuerze.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconBrot.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconFleisch.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconMost.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconBier.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconWein.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconLeinenkutten.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconLederwaemse.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconPelzmaentel.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconBrokatgewaender.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconBuecher.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconKerzenleuchter.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconBrillen.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconDatteln.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconMilch.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconTeppiche.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconKaffee.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconPerlenketten.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconDuftwasser.png" height="46" width="46" alt="">
+                </td>
+                        <td>
+                    <img src="images/goods/iconMarzipan.png" height="46" width="46" alt="">
+                </td>
+                    </tr>
+            <tr>
+                <th>Amount</th>
+                            <td>
+                        <span id="resultbetrieb_2" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_1" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_4" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_3" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_6" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_7" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_8" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_11" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_12" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_13" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_14" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_15" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_19" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_17" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_16" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_9" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_18" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_10" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_20" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_21" class="saveresult">0</span>
+                    </td>
+                            <td>
+                        <span id="resultbetrieb_5" class="saveresult">0</span>
+                    </td>
+                    </tr>
+            <tr id="difFrame">
+                <th>Difference</th>
+                            <td>
+                        <span id="comparebetrieb_2">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_1">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_4">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_3">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_6">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_7">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_8">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_11">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_12">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_13">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_14">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_15">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_19">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_17">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_16">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_9">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_18">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_10">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_20">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_21">-</span>
+                    </td>
+                            <td>
+                        <span id="comparebetrieb_5">-</span>
+                    </td>
+                    </tr>
+            <tr>
+                <th>Utilization</th>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                            <td>
+                                                                -
+                                                                                                                                                                                                <div style="height:50px; background-color:#88ff6d;">
+                            <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                        </div>
+                    </td>
+                    </tr>
+            <tr>
+                <th>Production chains</th>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                        <td>
+                                    &nbsp;
+                            </td>
+                    </tr>
+        </tbody></table></div>
+        <div></div>
+    </div>
+</body>
+</html>
