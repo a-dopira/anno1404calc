@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    let inhabitants = [
+    let inhabitantsDB = [
         {img: "images/inhabitants/iconBeggar.png", alt: "iconBeggar", title: "Beggar"},
         {img: "images/inhabitants/iconPeasant.png", alt: "iconPeasant", title: "Peasant"},
         {img: "images/inhabitants/iconCitizen.png", alt: "iconCitizen", title: "Citizen"},
@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
      ]
 
     //inhabitants
+
+    const inhabitants = document.querySelector('.inhabitants');
 
     class Inhabitant {
         constructor(src, alt, title, parentSelector) {
@@ -34,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 <li>
                     <ul>
                         <li>
-                            <input type="radio" name="c${this.title}Radio" class="inhabitantsRadio" value="inhabitants" checked="checked" alt="">
+                            <input type="radio" name="c${this.title}Radio" class="inhabitantsRadio" value="inhabitants" alt="" checked="checked">
                         </li>
                         <li>
                             <img src="images/inhabitants/iconInhabitants.png" alt="iconInhabitants">
@@ -46,9 +48,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 </li>
                 <li>
                     <ul>
-                        <li><input type="radio" name="c${this.title}Radio" class="HouseRadio" value="House" alt=""></li>
+                        <li><input type="radio" name="c${this.title}Radio" class="houseRadio" value="House" alt=""></li>
                         <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
-                        <li><input type="text" name="c${this.title}House" value="0" class="cText cTextwidth saveinput HouseInput" maxlength="6" alt=""></li>
+                        <li><input type="text" name="c${this.title}House" value="0" class="cText cTextwidth saveinput houseInput" maxlength="6" alt="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);" disabled></li>
                     </ul>
                 </li>
             `;
@@ -56,11 +58,54 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
  
-    inhabitants.forEach(({img, alt, title}) => new Inhabitant(img, alt, title, '.inhabitants').render());
+    inhabitantsDB.forEach(({img, alt, title}) => new Inhabitant(img, alt, title, '.inhabitants').render());
 
-    const inhabitantsList = document.querySelectorAll('.inhabitants ol');
+    //main switcher
+
+    const mainSwitcher = inhabitants.querySelectorAll('[name="switchRadio"]'),
+          allInhabitants = inhabitants.querySelectorAll('.inhabitantsRadio'),
+          allInhabitantsInputs = inhabitants.querySelectorAll('.inhabitantInput'),
+          allHouses = inhabitants.querySelectorAll('.houseRadio'),
+          allHousesInputs = inhabitants.querySelectorAll('.houseInput');
+        
+    mainSwitcher.forEach(item => {
+        item.addEventListener('click', (e) => {
+            if  (e.target.value == "inhabitants") {
+                allInhabitants.forEach(item => {
+                    item.checked = true;
+                })
+                allInhabitantsInputs.forEach(item => {
+                    item.removeAttribute('disabled')
+                    item.style.cssText = 'color: #000; background-color: #FFFFFF';
+                })
     
-    function switchAllInputs() 
+                allHousesInputs.forEach(item => {
+                    item.setAttribute("disabled", "disabled");
+                    item.style.cssText = 'color: #0A0A0A; background-color: #F1F1F1';
+                })
+
+                allHouses.forEach(item => {
+                    item.checked = false;
+                })
+            } else {
+                allHouses.forEach(item => {
+                    item.checked = true;
+                })
+                allHousesInputs.forEach(item => {
+                    item.removeAttribute('disabled')
+                    item.style.cssText = 'color: #000; background-color: #FFFFFF';
+                })
+    
+                allInhabitantsInputs.forEach(item => {
+                    item.setAttribute("disabled", "disabled");
+                    item.style.cssText = 'color: #0A0A0A; background-color: #F1F1F1';
+                })
+                allInhabitants.forEach(item => {
+                    item.checked = false;
+                })
+            }
+        })
+    })
 
     //table
 
