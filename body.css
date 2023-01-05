@@ -216,3 +216,10 @@ h2 {
     text-align: center;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+::placeholder {
+    color: black;
+}
