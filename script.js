@@ -50,7 +50,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     <ul>
                         <li><input type="radio" name="c${this.title}Radio" class="houseRadio" value="House" alt=""></li>
                         <li><img src="images/inhabitants/iconHouse.png" height="22" width="22" alt=""></li>
-                        <li><input type="text" name="c${this.title}House" value=0 placeholder=0 class="cText cTextwidth saveinput houseInput" maxlength="6" alt="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);" disabled></li>
+                        <li><input type="number" name="c${this.title}House" value=0 placeholder=0 class="cText cTextwidth saveinput houseInput"  maxlength="6" alt="" style="color: rgb(10, 10, 10); background-color: rgb(241, 241, 241);" disabled></li>
                     </ul>
                 </li>
             `;
@@ -84,7 +84,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     item.setAttribute("disabled", "disabled");
                     item.style.cssText = 'color: #0A0A0A; background-color: #F1F1F1';
                 })
-
                 allHouses.forEach(item => {
                     item.checked = false;
                 })
@@ -146,30 +145,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // top buttons
 
-    const topButtons = document.querySelectorAll('.nav ol li'),
-          topButtonsParent = document.querySelector('.nav ol');
+    const topButtons = document.querySelectorAll('.top-buttons_item'),
+          topButtonsParent = document.querySelector('.top-buttons');
 
     function removeActiveButton() {
         topButtons.forEach(item => {
-            item.classList.remove('activelink');
+            item.removeAttribute('style');
+            item.classList.remove('fade');
         })
     }
 
-    function addActiveButton(i = 0) {
-        topButtons[i].classList.add('activelink')
+    function setActiveButton(i = 0) {
+        topButtons[i].style.backgroundColor = '#373028';
+        topButtons[i].style.border = '2px solid #cecece;';
+        topButtons[i].style.color = '#D0BAA3';
+        topButtons[i].classList.add('fade')
     }
-
+   
     removeActiveButton()
-    addActiveButton()
+    setActiveButton()
 
-    topButtonsParent.addEventListener('click', event => {
+    topButtonsParent.addEventListener('click', (event) => {
         const target = event.target;
-        console.log(target)
-        if(target && target.classList.contains("top-buttons")) {
+        if(target) {
             topButtons.forEach((btn, i) => {
                 if(target == btn) {
-                    removeActiveButton()
-                    addActiveButton(i)
+                    removeActiveButton();
+                    setActiveButton(i);
                 }
             })
         }
@@ -187,6 +189,5 @@ window.addEventListener('DOMContentLoaded', () => {
         `
     
     tableBottom.prepend(tableHead);
-
 
 })

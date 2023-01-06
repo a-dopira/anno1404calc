@@ -17,6 +17,7 @@ body {
     margin-bottom: 20px;
 }
 
+
 .title {
     font-size: 2.5em;
     color: #373028;
@@ -39,7 +40,19 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
+/*top buttons styling*/
 
+.nav button {
+    border: 2px solid #cecece;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    margin: 0 5px 0px 0;
+    display: inline;
+    text-decoration: underline solid #432912;
+    font-size: 16px;
+    cursor: pointer;
+}
 .nav ol {
     list-style: none;
     padding: 0;
@@ -61,17 +74,14 @@ ul {
     margin: 0;
 }
 
-.activelink {
-    background: #373028;
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
-a {
-    color: #432912;
-}
-
-.activelink a {
-    text-decoration-line: none;
-    color: #d0baa3;
+@keyframes fade{
+    from{opacity: 0.1}
+    to{opacity: 1;}
 }
 
 li {
@@ -222,4 +232,8 @@ input[type=number]::-webkit-inner-spin-button {
 
 ::placeholder {
     color: black;
+}
+
+a {
+    z-index: -1;
 }
