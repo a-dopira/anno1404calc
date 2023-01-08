@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
                             <img src="images/inhabitants/iconInhabitants.png" alt="iconInhabitants">
                         </li>
                         <li>
-                            <input type="number" name="c${this.title}" value=0 placeholder=0 class="cText cTextwidth saveinput inhabitantInput" maxlength="6" tabindex="1" alt="">
+                            <input type="text" name="c${this.title}" value=0 placeholder=0 class="cText cTextwidth saveinput inhabitantInput" maxlength="6" tabindex="1" alt="">
                         </li>
                     </ul>
                 </li>
@@ -261,5 +261,60 @@ window.addEventListener('DOMContentLoaded', () => {
     
     tableBottom.prepend(tableHead);
 
-})
 
+    class ItemsTable {
+        constructor(img, parentSelector) {
+            this.img = img;
+            this.parentSelector = document.querySelector(parentSelector)
+        }
+
+        render() {
+            const td = document.createElement('td');
+
+            td.innerHTML = `
+                <img src=${this.img} height="46" width="46" alt="">
+            `
+            this.parentSelector.append(td)
+        }
+    }
+
+    goodsDB.forEach(({img}) => new ItemsTable(img, '.itemsRow').render())
+
+    // calc itself
+
+    function calc() {
+        let newArr = [];
+        const inhabitantsRadio = document.querySelectorAll('.inhabitantInput');
+        inhabitantsRadio.forEach(item => newArr.push(item.value))
+
+        let fish = (newArr[0] / 285) + (newArr[1] / 200) + (newArr[2] / 500) + (newArr[3] / 909) + (newArr[4] / 1250),
+            spices = (newArr[2] / 500) + (newArr[3] / 909) + (newArr[4] / 1250),
+            bread = (newArr[3] / 727) + (newArr[4] / 1025),
+            meat = (newArr[4] / 1136),
+            cider = (newArr[0] / 500) + (newArr[1]>=60 && (newArr[2] || newArr[3] || newArr[4]) ? (newArr[1] / 340  + (newArr[2] / 340) + (newArr[3] / 652) + (newArr[4] / 1153)) : (newArr[1] / 500)),
+            beer = newArr[3]>=510 || newArr[4] ? ((newArr[3] / 625) + (newArr[4] / 1071)) : (newArr[3] / 625),
+            wine = newArr[4]>=1500 ? (newArr[4] / 1000) : 0,
+            linenGarments = (newArr[2] / 476) + (newArr[3] / 1052) + (newArr[4] / 2500),
+            leatherJerkins = newArr[3]>=690 || newArr[4] ? ((newArr[3] / 1428) + (newArr[4] / 2500)) : newArr[3] / 690,
+            furCoats = newArr[4]>=950 ? (newArr[4] / 1562) : 0,
+            brocadeRobes = newArr[4] ? (newArr[4] / 2112) : 0,
+            books = newArr[3]>=940 || newArr[4] ? (newArr[3] / 1875) + (newArr[4] / 3333) : newArr[3] / 1875,
+            candlesticks = newArr[4] >= 3000 ? ((newArr[3] / 2500) + (newArr[4] / 3333)) : (newArr[4] / 3333),
+            glasses = newArr[4]>=1709 ? (newArr[4] / 1709) : 0,
+            dates = (newArr[5] / 450) + (newArr[6] / 600),
+            milk = newArr[5]>=145 || newArr[6] ? (newArr[5] / 436) + (newArr[6] / 666) : newArr[5] / 436,
+            carpets = newArr[5]>=295 ? (newArr[5] / 909) + (newArr[6] / 1500) : newArr[5] / 295,
+            coffee = (newArr[6] / 1000),
+            pearlNecklaces = newArr[6] >= 1040 ? (newArr[6] / 751) : 0,
+            parfumes = newArr[6] >= 2600 ? (newArr[6] / 1250) : 0,
+            marzipans = newArr[6] >= 4360 ? (newArr[6] / 2453) : 0;
+
+        let brandNewArr = [fish, spices, bread, meat, cider, beer, wine, linenGarments, leatherJerkins, furCoats, brocadeRobes,
+            books, candlesticks, glasses, dates, milk, carpets, coffee, pearlNecklaces, parfumes, marzipans];
+            
+        console.log(brandNewArr.map(item => Math.ceil(item)));
+    }
+    
+    const calcButton = document.querySelector('.button_2__calculate');
+    calcButton.addEventListener('click', calc);
+})
