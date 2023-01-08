@@ -176,6 +176,77 @@ window.addEventListener('DOMContentLoaded', () => {
             })
         }
     })
+    //select dropdowns
+
+    let goodsDB = [
+        {title: "fish", img: "images/goods/iconFisch.png", id: 1,},
+        {title: "spices", img: "images/goods/iconGewuerze.png", id: 2,},
+        {title: "bread", img: "images/goods/iconBrot.png", id: 3,},
+        {title: "meat", img: "images/goods/iconFleisch.png", id: 4,},
+        {title: "cider", img: "images/goods/iconMost.png", id: 5,},
+        {title: "beer", img: "images/goods/iconBier.png", id: 6,},
+        {title: "wine", img: "images/goods/iconWein.png", id: 7,},
+        {title: "linen garments", img: "images/goods/iconLeinenkutten.png", id: 8,},
+        {title: "leather jerkins", img: "images/goods/iconLederwaemse.png", id: 9,},
+        {title: "fur coats", img: "images/goods/iconPelzmaentel.png", id: 10,},
+        {title: "brocade robes", img: "images/goods/iconBrokatgewaender.png", id: 11,},
+        {title: "books", img: "images/goods/iconBuecher.png", id: 12,},
+        {title: "candlesticks", img: "images/goods/iconKerzenleuchter.png", id: 13,},
+        {title: "glasses", img: "images/goods/iconBrillen.png", id: 14,},
+        {title: "dates", img: "images/goods/iconDatteln.png", id: 15,},
+        {title: "milk", img: "images/goods/iconMilch.png", id: 16,},
+        {title: "carpets", img: "images/goods/iconTeppiche.png", id: 17,},
+        {title: "coffee", img: "images/goods/iconKaffee.png", id: 18,},
+        {title: "pearl necklaces", img: "images/goods/iconPerlenketten.png", id: 19,},
+        {title: "parfumes", img: "images/goods/iconDuftwasser.png", id: 20,},
+        {title: "marzipans", img: "images/goods/iconMarzipan.png", id: 21,},
+    ];
+
+    class GoodsSelection {
+        constructor(title, img, id, parentSelector) {
+            this.title = title;
+            this.img = img;
+            this.id = id;
+            this.parentSelector = document.querySelector(parentSelector);
+        };
+
+        render() {
+            const ol = document.createElement('ol');
+            ol.innerHTML = `
+                <li><img src=${this.img} height="32" width="32" alt=${this.title}></li>
+                    <li>
+                        <select name="itemselect_${this.id}" id="itemselect_${this.id}" class="itemselect saveinput">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </li>
+                <li>&#43;<span id="itemresult_${this.id}" class="itemresult">0</span>&#37;</li>
+            `
+            this.parentSelector.append(ol);
+        }
+    }
+
+    goodsDB.forEach(({title, img, id}) => new GoodsSelection(title, img, id, '.items').render())
+
+    function goodsDropdownSelection(id) {
+
+        const itemResult = document.getElementById(`itemresult_${id}`),
+              itemSelect = document.getElementById(`itemselect_${id}`);
+
+        itemSelect.addEventListener('click', () => {
+            itemResult.textContent = itemSelect.value * 25;
+        })
+    }
+
+    function adjustAllItemSelections() {
+        for (let item of goodsDB) {
+            goodsDropdownSelection(item["id"])
+        }
+    }
+
+    adjustAllItemSelections()
 
     //table
 
@@ -191,3 +262,4 @@ window.addEventListener('DOMContentLoaded', () => {
     tableBottom.prepend(tableHead);
 
 })
+
