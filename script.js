@@ -252,6 +252,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const tableBottom = document.querySelector('tbody');
     const tableHead = document.createElement('tr');
+    tableHead.classList.add('title_table');
 
     tableHead.innerHTML = `
                  <th></th>
@@ -280,11 +281,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
     goodsDB.forEach(({img}) => new ItemsTable(img, '.itemsRow').render())
 
+    function tableAmount(id) {
+        const tableAmount = document.querySelector('.amount')
+
+        for (let i = 0; i < id; i++) {
+            const td = document.createElement('td');
+            td.innerHTML = `
+                <span id="resultAmount_${i}" class="saveresult">0</span>
+            `
+            tableAmount.append(td)
+        }
+    }
+
+    tableAmount(goodsDB.length)
+
     // calc itself
+
+    const inhabitantsRadio = document.querySelectorAll('.inhabitantInput');
 
     function calc() {
         let newArr = [];
-        const inhabitantsRadio = document.querySelectorAll('.inhabitantInput');
+       
         inhabitantsRadio.forEach(item => newArr.push(item.value))
 
         let fish = (newArr[0] / 285) + (newArr[1] / 200) + (newArr[2] / 500) + (newArr[3] / 909) + (newArr[4] / 1250),
@@ -310,9 +327,10 @@ window.addEventListener('DOMContentLoaded', () => {
             marzipans = newArr[6] >= 4360 ? (newArr[6] / 2453) : 0;
 
         let brandNewArr = [fish, spices, bread, meat, cider, beer, wine, linenGarments, leatherJerkins, furCoats, brocadeRobes,
-            books, candlesticks, glasses, dates, milk, carpets, coffee, pearlNecklaces, parfumes, marzipans];
+            books, candlesticks, glasses, dates, milk, carpets, coffee, pearlNecklaces, parfumes, marzipans].map(item => Math.ceil(item))
+            console.log(brandNewArr);
             
-        console.log(brandNewArr.map(item => Math.ceil(item)));
+        
     }
     
     const calcButton = document.querySelector('.button_2__calculate');
