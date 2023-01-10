@@ -119,6 +119,10 @@ li {
     padding: 0;
 }
 
+#difFrame {
+    display: none;
+}
+
 .cTextwidth {
     width: 80px;
 }

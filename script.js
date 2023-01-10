@@ -262,77 +262,86 @@ window.addEventListener('DOMContentLoaded', () => {
     
     tableBottom.prepend(tableHead);
 
-
-    class ItemsTable {
-        constructor(img, parentSelector) {
+    class TableCells {
+        constructor(id, img, parentSelector) {
+            this.id = id;
             this.img = img;
-            this.parentSelector = document.querySelector(parentSelector)
+            this.parentSelector = document.querySelector(parentSelector);
         }
 
-        render() {
+        renderImages() {
             const td = document.createElement('td');
 
             td.innerHTML = `
                 <img src=${this.img} height="46" width="46" alt="">
             `
             this.parentSelector.append(td)
-        }
-    }
+        };
 
-    goodsDB.forEach(({img}) => new ItemsTable(img, '.itemsRow').render())
-
-    function tableAmount(id) {
-        const tableAmount = document.querySelector('.amount')
-
-        for (let i = 0; i < id; i++) {
+        renderAmount() {
             const td = document.createElement('td');
             td.innerHTML = `
-                <span id="resultAmount_${i}" class="saveresult">0</span>
+                <span id="resultAmount_${this.id}" class="saveresult">0</span>
             `
-            tableAmount.append(td)
+            this.parentSelector.append(td)
+        };
+
+        renderUtilization() {
+            const td = document.createElement('td');
+            td.innerHTML = `
+                -
+                <div id="utilization_${this.id}" style="height:50px; background-color:#88ff6d;">
+                    <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                </div>
+            `
+            this.parentSelector.append(td);
         }
     }
-
-    tableAmount(goodsDB.length)
+    
+    goodsDB.forEach(({img}) => new TableCells(null, img, '.itemsRow').renderImages())
+    goodsDB.forEach(({id}) => new TableCells(id, null, '.amount').renderAmount());
+    goodsDB.forEach(({id}) => new TableCells(id, null, '.utilization').renderUtilization())
 
     // calc itself
 
     const inhabitantsRadio = document.querySelectorAll('.inhabitantInput');
+    const amountEach = document.querySelectorAll('.amount td');
 
     function calc() {
-        let newArr = [];
+        let product = [];
        
-        inhabitantsRadio.forEach(item => newArr.push(item.value))
+        inhabitantsRadio.forEach(item => product.push(item.value))
 
-        let fish = (newArr[0] / 285) + (newArr[1] / 200) + (newArr[2] / 500) + (newArr[3] / 909) + (newArr[4] / 1250),
-            spices = (newArr[2] / 500) + (newArr[3] / 909) + (newArr[4] / 1250),
-            bread = (newArr[3] / 727) + (newArr[4] / 1025),
-            meat = (newArr[4] / 1136),
-            cider = (newArr[0] / 500) + (newArr[1]>=60 && (newArr[2] || newArr[3] || newArr[4]) ? (newArr[1] / 340  + (newArr[2] / 340) + (newArr[3] / 652) + (newArr[4] / 1153)) : (newArr[1] / 500)),
-            beer = newArr[3]>=510 || newArr[4] ? ((newArr[3] / 625) + (newArr[4] / 1071)) : (newArr[3] / 625),
-            wine = newArr[4]>=1500 ? (newArr[4] / 1000) : 0,
-            linenGarments = (newArr[2] / 476) + (newArr[3] / 1052) + (newArr[4] / 2500),
-            leatherJerkins = newArr[3]>=690 || newArr[4] ? ((newArr[3] / 1428) + (newArr[4] / 2500)) : newArr[3] / 690,
-            furCoats = newArr[4]>=950 ? (newArr[4] / 1562) : 0,
-            brocadeRobes = newArr[4] ? (newArr[4] / 2112) : 0,
-            books = newArr[3]>=940 || newArr[4] ? (newArr[3] / 1875) + (newArr[4] / 3333) : newArr[3] / 1875,
-            candlesticks = newArr[4] >= 3000 ? ((newArr[3] / 2500) + (newArr[4] / 3333)) : (newArr[4] / 3333),
-            glasses = newArr[4]>=1709 ? (newArr[4] / 1709) : 0,
-            dates = (newArr[5] / 450) + (newArr[6] / 600),
-            milk = newArr[5]>=145 || newArr[6] ? (newArr[5] / 436) + (newArr[6] / 666) : newArr[5] / 436,
-            carpets = newArr[5]>=295 ? (newArr[5] / 909) + (newArr[6] / 1500) : newArr[5] / 295,
-            coffee = (newArr[6] / 1000),
-            pearlNecklaces = newArr[6] >= 1040 ? (newArr[6] / 751) : 0,
-            parfumes = newArr[6] >= 2600 ? (newArr[6] / 1250) : 0,
-            marzipans = newArr[6] >= 4360 ? (newArr[6] / 2453) : 0;
+        let fish = (product[0] / 285) + (product[1] / 200) + (product[2] / 500) + (product[3] / 909) + (product[4] / 1250),
+            spices = (product[2] / 500) + (product[3] / 909) + (product[4] / 1250),
+            bread = (product[3] / 727) + (product[4] / 1025),
+            meat = (product[4] / 1136),
+            cider = (product[0] / 500) + (product[1]>=60 && (product[2] || product[3] || product[4]) ? (product[1] / 340  + (product[2] / 340) + (product[3] / 652) + (product[4] / 1153)) : (product[1] / 500)),
+            beer = product[3]>=510 || product[4] ? ((product[3] / 625) + (product[4] / 1071)) : (product[3] / 625),
+            wine = product[4]>=1500 ? (product[4] / 1000) : 0,
+            linenGarments = (product[2] / 476) + (product[3] / 1052) + (product[4] / 2500),
+            leatherJerkins = product[3]>=690 || product[4] ? ((product[3] / 1428) + (product[4] / 2500)) : product[3] / 690,
+            furCoats = product[4]>=950 ? (product[4] / 1562) : 0,
+            brocadeRobes = product[4] ? (product[4] / 2112) : 0,
+            books = product[3]>=940 || product[4] ? (product[3] / 1875) + (product[4] / 3333) : product[3] / 1875,
+            candlesticks = product[4] >= 3000 ? ((product[3] / 2500) + (product[4] / 3333)) : (product[4] / 3333),
+            glasses = product[4]>=1709 ? (product[4] / 1709) : 0,
+            dates = (product[5] / 450) + (product[6] / 600),
+            milk = product[5]>=145 || product[6] ? (product[5] / 436) + (product[6] / 666) : product[5] / 436,
+            carpets = product[5]>=295 ? (product[5] / 909) + (product[6] / 1500) : product[5] / 295,
+            coffee = (product[6] / 1000),
+            pearlNecklaces = product[6] >= 1040 ? (product[6] / 751) : 0,
+            parfumes = product[6] >= 2600 ? (product[6] / 1250) : 0,
+            marzipans = product[6] >= 4360 ? (product[6] / 2453) : 0;
 
-        let brandNewArr = [fish, spices, bread, meat, cider, beer, wine, linenGarments, leatherJerkins, furCoats, brocadeRobes,
-            books, candlesticks, glasses, dates, milk, carpets, coffee, pearlNecklaces, parfumes, marzipans].map(item => Math.ceil(item))
-            console.log(brandNewArr);
-            
+        let allProducts = [fish, spices, bread, meat, cider, beer, wine, linenGarments, leatherJerkins, furCoats, brocadeRobes,
+            books, candlesticks, glasses, dates, milk, carpets, coffee, pearlNecklaces, parfumes, marzipans].map(item => Math.ceil(item));
         
-    }
+        amountEach.forEach(item => item.textContent = "0");
+        amountEach.forEach((item, i) => item.textContent = allProducts[i])
+    };
     
     const calcButton = document.querySelector('.button_2__calculate');
     calcButton.addEventListener('click', calc);
+
 })
