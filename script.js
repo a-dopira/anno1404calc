@@ -1,13 +1,13 @@
 window.addEventListener('DOMContentLoaded', () => {
 
     let inhabitantsDB = [
-        {img: "images/inhabitants/iconBeggar.png", alt: "iconBeggar", title: "Beggar"},
-        {img: "images/inhabitants/iconPeasant.png", alt: "iconPeasant", title: "Peasant"},
-        {img: "images/inhabitants/iconCitizen.png", alt: "iconCitizen", title: "Citizen"},
-        {img: "images/inhabitants/iconPatrician.png", alt: "iconPatrician", title: "Patrician"},
-        {img: "images/inhabitants/iconNobleman.png", alt: "iconNobelman", title: "Nobelman"},
-        {img: "images/inhabitants/iconNomad.png", alt: "iconNomad", title: "Nomad"},
-        {img: "images/inhabitants/iconEnvoy.png", alt: "iconEnvoy", title: "Envoy"},
+        {img: "images/inhabitants/iconBeggar.png", alt: "iconBeggar", title: "Beggar", ratio: 500},
+        {img: "images/inhabitants/iconPeasant.png", alt: "iconPeasant", title: "Peasant", ratio: 8},
+        {img: "images/inhabitants/iconCitizen.png", alt: "iconCitizen", title: "Citizen", ratio: 15},
+        {img: "images/inhabitants/iconPatrician.png", alt: "iconPatrician", title: "Patrician", ratio: 25},
+        {img: "images/inhabitants/iconNobleman.png", alt: "iconNobelman", title: "Nobelman", ratio: 40},
+        {img: "images/inhabitants/iconNomad.png", alt: "iconNomad", title: "Nomad", ratio: 15},
+        {img: "images/inhabitants/iconEnvoy.png", alt: "iconEnvoy", title: "Envoy", ratio: 25},
      ]
 
     //inhabitants
@@ -110,7 +110,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //individual switcher
 
-    function inputSettings(nameRadio, nameInhabitant, nameHouse) {
+    function inputSettings(nameRadio, nameInhabitant, nameHouse, ratio) {
         const cNameRadio = document.querySelectorAll(`[name="${nameRadio}"]`),
               cNameHouse = document.querySelector(`[name="${nameHouse}"]`),
               cNameInhabitant = document.querySelector(`[name="${nameInhabitant}"]`);
@@ -133,11 +133,19 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             })
         })
+
+        cNameHouse.addEventListener('input', (e) => {
+            cNameInhabitant.value = e.target.value * ratio;
+        })
+
+        cNameInhabitant.addEventListener('input', (e) => {
+            cNameHouse.value = Math.ceil(e.target.value / ratio);
+        })
     }
 
     function inputSettingsAll() {
         for (let key of inhabitantsDB) {
-            inputSettings(`c${key["title"]}Radio`, `c${key["title"]}`, `c${key["title"]}House`)
+            inputSettings(`c${key["title"]}Radio`, `c${key["title"]}`, `c${key["title"]}House`, key['ratio'])
         }
     }
     
@@ -179,27 +187,27 @@ window.addEventListener('DOMContentLoaded', () => {
     //select dropdowns
 
     let goodsDB = [
-        {title: "fish", img: "images/goods/iconFisch.png", id: 1,},
-        {title: "spices", img: "images/goods/iconGewuerze.png", id: 2,},
-        {title: "bread", img: "images/goods/iconBrot.png", id: 3,},
-        {title: "meat", img: "images/goods/iconFleisch.png", id: 4,},
-        {title: "cider", img: "images/goods/iconMost.png", id: 5,},
-        {title: "beer", img: "images/goods/iconBier.png", id: 6,},
-        {title: "wine", img: "images/goods/iconWein.png", id: 7,},
-        {title: "linen garments", img: "images/goods/iconLeinenkutten.png", id: 8,},
-        {title: "leather jerkins", img: "images/goods/iconLederwaemse.png", id: 9,},
-        {title: "fur coats", img: "images/goods/iconPelzmaentel.png", id: 10,},
-        {title: "brocade robes", img: "images/goods/iconBrokatgewaender.png", id: 11,},
-        {title: "books", img: "images/goods/iconBuecher.png", id: 12,},
-        {title: "candlesticks", img: "images/goods/iconKerzenleuchter.png", id: 13,},
-        {title: "glasses", img: "images/goods/iconBrillen.png", id: 14,},
-        {title: "dates", img: "images/goods/iconDatteln.png", id: 15,},
-        {title: "milk", img: "images/goods/iconMilch.png", id: 16,},
-        {title: "carpets", img: "images/goods/iconTeppiche.png", id: 17,},
-        {title: "coffee", img: "images/goods/iconKaffee.png", id: 18,},
-        {title: "pearl necklaces", img: "images/goods/iconPerlenketten.png", id: 19,},
-        {title: "parfumes", img: "images/goods/iconDuftwasser.png", id: 20,},
-        {title: "marzipans", img: "images/goods/iconMarzipan.png", id: 21,},
+        {title: "fish", img: "images/goods/iconFisch.png", id: 1, production: []},
+        {title: "spices", img: "images/goods/iconGewuerze.png", id: 2, production: []},
+        {title: "bread", img: "images/goods/iconBrot.png", id: 3, production: [{}]},
+        {title: "meat", img: "images/goods/iconFleisch.png", id: 4, production: []},
+        {title: "cider", img: "images/goods/iconMost.png", id: 5, production: []},
+        {title: "beer", img: "images/goods/iconBier.png", id: 6, production: []},
+        {title: "wine", img: "images/goods/iconWein.png", id: 7, production: []},
+        {title: "linen garments", img: "images/goods/iconLeinenkutten.png", id: 8, production: []},
+        {title: "leather jerkins", img: "images/goods/iconLederwaemse.png", id: 9, production: []},
+        {title: "fur coats", img: "images/goods/iconPelzmaentel.png", id: 10, production: []},
+        {title: "brocade robes", img: "images/goods/iconBrokatgewaender.png", id: 11, production: []},
+        {title: "books", img: "images/goods/iconBuecher.png", id: 12, production: []},
+        {title: "candlesticks", img: "images/goods/iconKerzenleuchter.png", id: 13, production: []},
+        {title: "glasses", img: "images/goods/iconBrillen.png", id: 14, production: []},
+        {title: "dates", img: "images/goods/iconDatteln.png", id: 15, production: []},
+        {title: "milk", img: "images/goods/iconMilch.png", id: 16, production: []},
+        {title: "carpets", img: "images/goods/iconTeppiche.png", id: 17, production: []},
+        {title: "coffee", img: "images/goods/iconKaffee.png", id: 18, production: []},
+        {title: "pearl necklaces", img: "images/goods/iconPerlenketten.png", id: 19, production: []},
+        {title: "parfumes", img: "images/goods/iconDuftwasser.png", id: 20, production: []},
+        {title: "marzipans", img: "images/goods/iconMarzipan.png", id: 21, production: []},
     ];
 
     class GoodsSelection {
@@ -289,9 +297,9 @@ window.addEventListener('DOMContentLoaded', () => {
         renderUtilization() {
             const td = document.createElement('td');
             td.innerHTML = `
-                -
-                <div id="utilization_${this.id}" style="height:50px; background-color:#88ff6d;">
-                    <div style="height:50px; background-color:#fff;">&nbsp;</div>
+                <span>-</span>
+                <div id="utilization_${this.id}" class="colored-space" style="height:50px; background-color:#88ff6d;">
+                    <div class="space" style="height:50px; background-color:#fff;">&nbsp;</div>
                 </div>
             `
             this.parentSelector.append(td);
@@ -335,13 +343,44 @@ window.addEventListener('DOMContentLoaded', () => {
             marzipans = product[6] >= 4360 ? (product[6] / 2453) : 0;
 
         let allProducts = [fish, spices, bread, meat, cider, beer, wine, linenGarments, leatherJerkins, furCoats, brocadeRobes,
-            books, candlesticks, glasses, dates, milk, carpets, coffee, pearlNecklaces, parfumes, marzipans].map(item => Math.ceil(item));
-        
+            books, candlesticks, glasses, dates, milk, carpets, coffee, pearlNecklaces, parfumes, marzipans]
+
+        let allCeiledProducts = allProducts.map(item => Math.ceil(item));
+
         amountEach.forEach(item => item.textContent = "0");
-        amountEach.forEach((item, i) => item.textContent = allProducts[i])
+        amountEach.forEach((item, i) => item.textContent = allCeiledProducts[i])
+
+        utilization(allProducts, allCeiledProducts, utilizations)
     };
     
     const calcButton = document.querySelector('.button_2__calculate');
     calcButton.addEventListener('click', calc);
+
+    // utilization calc
+
+    const utilizations = document.querySelectorAll('.utilization td');
+
+    function utilization(allProducts, allCeiledProducts, utilizations) {
+
+        utilizations.forEach((item, i) => {
+            let dashItem = item.querySelector('span'),
+                whiteSpace = item.querySelector('.space'),
+                coloredSpace = item.querySelector('.colored-space');
+
+            let denominator = allProducts[i] / allCeiledProducts[i];
+
+            whiteSpace.style.height = 50 - (50 * denominator) + 'px';
+
+            if (denominator > 0.60 && denominator < 0.94) {
+                coloredSpace.style.backgroundColor = '#f7ffa2'
+            } else if (denominator >= 0.94) {
+                coloredSpace.style.backgroundColor = '#ff5353'
+            } else {
+                coloredSpace.style.backgroundColor = '#88ff6d'
+            }
+
+            dashItem.textContent = denominator ? (Math.round(denominator * 100) + '%') : '-';
+        })
+    }
 
 })
