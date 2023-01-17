@@ -233,13 +233,15 @@ window.addEventListener('DOMContentLoaded', () => {
         marzipans: [{"Confectioner's Workshop": 100, img: "images/goods/iconMarzipan.png"}, {"Almond plantation": 200, img: "images/fabrics/iconAlmond.png"}, {"Sugar mill": 100, img: "images/fabrics/iconSugar.png"}, {"Sugarcane Plantation": 200, img: "images/fabrics/iconSugarcane.png"}]
     }
 
-    /* 
+    /*  Retrieving data...
+
         condition: title
             pos = 0 for titles
         
         condition: value
             pos = 0 for denominators
             pos = 1 for images paths
+
     */
 
     function retrieveData(chains, condition, pos) {
@@ -280,13 +282,40 @@ window.addEventListener('DOMContentLoaded', () => {
         return result; 
     }
     
-    let titles = retrieveData(chains, 'title', 0), 
-        ratios = retrieveData(chains, 'value', 0),
-        paths = retrieveData(chains, 'value', 1);
-        
+    let data = [
+        {titles: [...retrieveData(chains, 'title', 0)]},
+        {ratios: [...retrieveData(chains, 'value', 0)]},
+       { paths: [...retrieveData(chains, 'value', 1)]},
+    ]
 
-    for (let i = 0; i < titles.length; i++) {
-        console.log(titles[i].join(', '));
+//    data["titles"].forEach(item => {
+//         const singleChain = document.createElement('div');
+//         item.forEach(i => {
+//             console.log(`Title is ${i}`);
+//         })
+//         console.log('end');
+//     })
+    
+    class LupeConsist {
+        constructor(title, ratio, path, parentSelector) {
+            this.title = title;
+            this.ratio = ratio;
+            this.path = path;
+            this.parentSelector = document.querySelector(parentSelector)
+        }
+        
+        render() {
+            const ol = document.createElement('ol');
+
+            ol.innerHTML = `
+                <li>${this.ratio}</li>
+                <li><img src=${this.path}</li>
+                <li>${this.title}</li>
+                <li>${this.ratio}</li>
+            `
+
+            this.parentSelector.append(ol)
+        }
     }
     
     //select dropdowns
@@ -443,6 +472,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         utilization(allProducts, allCeiledProducts, utilizations);
         showLupe()
+        addChains()
     };
     
     const calcButton = document.querySelector('.button_2__calculate');
@@ -482,11 +512,29 @@ window.addEventListener('DOMContentLoaded', () => {
     function showLupe() {
         pChains.forEach((item, i) => {
             if (amountEach[i].textContent != '0') {
-                item.querySelector('img').style.display = 'block'
+                item.querySelector('img').style.display = 'block';
+                item.addEventListener('click', (e) => {
+                    if (e.target == item.querySelector('img')) {
+                        document.querySelector('.pcDisplay').style.display = 'block';
+                    }
+                })
             } else {
                 item.querySelector('img').style.display = 'none'
             }
         })
     }
+
+    function addChains() {
+        pChains.forEach((item, i) => {
+            if (item.querySelector('img').style.display == 'block') {
+                item.addEventListener('click', (e) => {
+                    if (e.target == item.querySelector('img')) {
+                        document.querySelector('.pcDisplay').style.display = 'block';
+                    }
+                })
+            }
+        })
+    }
+
 
 })
