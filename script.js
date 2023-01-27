@@ -236,7 +236,7 @@ window.addEventListener('DOMContentLoaded', () => {
     /*  Retrieving data...
 
         condition: title
-            pos = 0 for titles
+            pos = 0 for titles  
         
         condition: value
             pos = 0 for denominators
@@ -285,38 +285,10 @@ window.addEventListener('DOMContentLoaded', () => {
     let data = [
         {titles: [...retrieveData(chains, 'title', 0)]},
         {ratios: [...retrieveData(chains, 'value', 0)]},
-       { paths: [...retrieveData(chains, 'value', 1)]},
+        {paths: [...retrieveData(chains, 'value', 1)]},
     ]
 
-//    data["titles"].forEach(item => {
-//         const singleChain = document.createElement('div');
-//         item.forEach(i => {
-//             console.log(`Title is ${i}`);
-//         })
-//         console.log('end');
-//     })
     
-    class LupeConsist {
-        constructor(title, ratio, path, parentSelector) {
-            this.title = title;
-            this.ratio = ratio;
-            this.path = path;
-            this.parentSelector = document.querySelector(parentSelector)
-        }
-        
-        render() {
-            const ol = document.createElement('ol');
-
-            ol.innerHTML = `
-                <li>${this.ratio}</li>
-                <li><img src=${this.path}</li>
-                <li>${this.title}</li>
-                <li>${this.ratio}</li>
-            `
-
-            this.parentSelector.append(ol)
-        }
-    }
     
     //select dropdowns
 
@@ -381,6 +353,9 @@ window.addEventListener('DOMContentLoaded', () => {
     tableBottom.prepend(tableHead);
 
     class TableCells {
+
+        lupe = "images/iconLupe.png";
+
         constructor(img, parentSelector) {
             this.img = img;
             this.parentSelector = document.querySelector(parentSelector);
@@ -418,7 +393,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const td = document.createElement('td');
             td.innerHTML = `
                 <td>
-                    <img src="images/iconLupe.png" style="display: none">
+                    <img src=${this.lupe} style="display: none">
                 </td>
             `
             this.parentSelector.append(td)
@@ -472,7 +447,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
         utilization(allProducts, allCeiledProducts, utilizations);
         showLupe()
-        addChains()
     };
     
     const calcButton = document.querySelector('.button_2__calculate');
@@ -513,28 +487,42 @@ window.addEventListener('DOMContentLoaded', () => {
         pChains.forEach((item, i) => {
             if (amountEach[i].textContent != '0') {
                 item.querySelector('img').style.display = 'block';
-                item.addEventListener('click', (e) => {
-                    if (e.target == item.querySelector('img')) {
-                        document.querySelector('.pcDisplay').style.display = 'block';
-                    }
-                })
-            } else {
-                item.querySelector('img').style.display = 'none'
-            }
-        })
-    }
-
-    function addChains() {
-        pChains.forEach((item, i) => {
-            if (item.querySelector('img').style.display == 'block') {
-                item.addEventListener('click', (e) => {
-                    if (e.target == item.querySelector('img')) {
-                        document.querySelector('.pcDisplay').style.display = 'block';
+                item.querySelector('img').addEventListener('click', (e) => {
+                    if (e.target == item.querySelector('img') && document.querySelector('.pcFrame').style.display == 'none') {
+                        document.querySelector('.pcFrame').style.display = 'block';
+                    } else {
+                        document.querySelector('.pcFrame').style.display = 'none';
                     }
                 })
             }
         })
     }
 
+    // function mountSingleChain(data, id) {
+    //     let titles = data[0]["titles"],
+    //         ratios = data[1]["ratios"],
+    //         paths = data[2]["paths"];
 
+    //     let chains = document.querySelector('.pcDisplay');
+    //         singleChain = document.createElement('div');
+
+    //     singleChain.classList.add('single-chain');
+    //     singleChain.style.gridTemplateColumns = `repeat(${titles[id].length}, 50px)`;
+        
+    //     chains.append(singleChain)
+
+    //     for (let i = 0; i < titles[id].length; i++) {
+    //         let div = document.createElement('div');
+
+    //         div.innerHTML = `
+    //             <div><img src=${paths[id][i]}></div>
+    //             <div>${titles[id][i]}</div>
+    //             <div>${ratios[id][i]}</div>
+    //         `
+    //         singleChain.append(div);
+    //     }
+    // }
+
+    // mountSingleChain(data, 0)
+    
 })

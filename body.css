@@ -87,6 +87,7 @@ button {
 li {
     display: list-item;
     text-align: -webkit-match-parent;
+    list-style: none;
 }
 
 /*inputFrame, ввод кол-ва населения*/
@@ -255,4 +256,14 @@ a {
     float: right;
     margin-top: 5px;
     margin-right: 15px;
+}
+
+.single-chain {
+    margin-top: 50px;
+}
+
+.pcDisplay div div {
+    display: inline-grid;
+    width: 100px;
+    justify-content: center;
 }
