@@ -223,7 +223,7 @@ window.addEventListener('DOMContentLoaded', () => {
         brocadeRobes: [{"Silk Weaving Mill": 100, img: "images/goods/iconBrokatgewaender.png"}, {"Silk Plantation": 200, img: "images/fabrics/iconSilk.png"}, {"Gold Smelter": 100, img: "images/fabrics/iconGoldSmelter.png"}, {"Goldmine": 100, img: "images/fabrics/iconGoldMine.png"}, {"Charcoal Burner's Hut": 75, img: "images/fabrics/iconCoal1"}],
         books: [{"Printing House": 100, img: "images/goods/iconBuecher.png"}, {"Indigo farm": 200, img: "images/fabrics/iconIndigo.png"}, {"Paper Mill": 50, img: "images/fabrics/iconPaper.png"}, {"Lumberjacks's hut": 100, img: "images/fabrics/iconWood.png"}],
         candlesticks: [{"Redsmith's Workshop": 100, img: "images/goods/iconKerzenleuchter.png"}, {"Candlemaker's Workshop": 150, img: "images/fabrics/iconCandlemaker.png"}, {"Apiary": 300, img: "images/fabrics/iconApiary.png"}, {"Hemp plantation": 150, img: "images/fabrics/iconHemp.png"}, {"Copper Smelter": 75, img: "images/fabrics/iconCopperSmelter.png"}, {"Copper Mine": 75, img: "images/fabrics/iconCopperMine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
-        glasses: [{"Optician's Workshop": 100, img: "images/goods/iconBrillen.png"}, {"Quarz Quary": 75, img: "images/fabrics/iconQuarz"}, {"Copper Smelter": 75, img: "images/fabrics/iconCopperSmelter.png"}, {"Copper Mine": 75, img: "images/fabrics/iconCopperMine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
+        glasses: [{"Optician's Workshop": 100, img: "images/goods/iconBrillen.png"}, {"Quarz Quary": 75, img: "images/fabrics/iconQuarz.png"}, {"Copper Smelter": 75, img: "images/fabrics/iconCopperSmelter.png"}, {"Copper Mine": 75, img: "images/fabrics/iconCopperMine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
         dates: [{"Date plantation": 100, img: "images/goods/iconDatteln.png"}],
         milk: [{"Goat farm": 100, img: "images/goods/iconMilch.png"}],
         carpets: [{"Carpet workshop": 100, img: "images/goods/iconTeppiche.png"}, {"Indigo farm": 100, img: "images/fabrics/iconIndigo.png"}, {"Silk plantation": 100, img: "images/fabrics/iconSilk.png"}],
@@ -393,7 +393,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const td = document.createElement('td');
             td.innerHTML = `
                 <td>
-                    <img src=${this.lupe} style="display: none">
+                    <img src=${this.lupe} style="display: none; cursor: pointer">
                 </td>
             `
             this.parentSelector.append(td)
@@ -409,17 +409,24 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const inhabitantsRadio = document.querySelectorAll('.inhabitantInput');
     const amountEach = document.querySelectorAll('.amount td');
+    const calcButton = document.querySelector('.button_2__calculate');
 
     function calc() {
         let product = [];
        
-        inhabitantsRadio.forEach(item => product.push(item.value))
+        inhabitantsRadio.forEach(item => product.push(item.value));
+
+        if(!(product.every(i => i === '0'))) {
+            tableBottom.classList.contains('fade') ? tableBottom.classList.remove('fade') : tableBottom.classList.add('fade');
+        } else {
+            tableBottom.classList.add('fade');
+        }
 
         let fish = (product[0] / 285) + (product[1] / 200) + (product[2] / 500) + (product[3] / 909) + (product[4] / 1250),
             spices = (product[2] / 500) + (product[3] / 909) + (product[4] / 1250),
             bread = (product[3] / 727) + (product[4] / 1025),
             meat = (product[4] / 1136),
-            cider = (product[0] / 500) + (product[1]>=60 && (product[2] || product[3] || product[4]) ? (product[1] / 340  + (product[2] / 340) + (product[3] / 652) + (product[4] / 1153)) : (product[1] / 500)),
+            cider = (product[0] / 500) + (product[1]>=60 || (product[2] || product[3] || product[4]) ? (product[1] / 340  + (product[2] / 340) + (product[3] / 652) + (product[4] / 1153)) : (product[1] / 500)),
             beer = product[3]>=510 || product[4] ? ((product[3] / 625) + (product[4] / 1071)) : (product[3] / 625),
             wine = product[4]>=1500 ? (product[4] / 1000) : 0,
             linenGarments = (product[2] / 476) + (product[3] / 1052) + (product[4] / 2500),
@@ -442,16 +449,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let allCeiledProducts = allProducts.map(item => Math.ceil(item));
 
-        amountEach.forEach(item => item.textContent = "0");
         amountEach.forEach((item, i) => item.textContent = allCeiledProducts[i])
 
         utilization(allProducts, allCeiledProducts, utilizations);
         showLupe()
     };
-    
-    const calcButton = document.querySelector('.button_2__calculate');
-    calcButton.addEventListener('click', calc);
 
+    calcButton.addEventListener('click', calc);
+    
     // utilization calc
 
     const utilizations = document.querySelectorAll('.utilization td');
@@ -467,13 +472,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
             whiteSpace.style.height = 50 - (50 * denominator) + 'px';
 
-            if (denominator > 0.60 && denominator < 0.94) {
-                coloredSpace.style.backgroundColor = '#f7ffa2'
-            } else if (denominator >= 0.94) {
-                coloredSpace.style.backgroundColor = '#ff5353'
-            } else {
-                coloredSpace.style.backgroundColor = '#88ff6d'
-            }
+                if (denominator > 0.60 && denominator < 0.94) {
+                    coloredSpace.style.backgroundColor = '#f7ffa2'
+                } else if (denominator >= 0.94) {
+                    coloredSpace.style.backgroundColor = '#ff5353'
+                } else if (denominator > 0 && denominator <= 0.60) {
+                    coloredSpace.style.backgroundColor = '#88ff6d'
+                } else {
+                    coloredSpace.style.backgroundColor = '#ffffff';
+                }
 
             dashItem.textContent = denominator ? (Math.round(denominator * 100) + '%') : '-';
         })
@@ -485,44 +492,69 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function showLupe() {
         pChains.forEach((item, i) => {
-            if (amountEach[i].textContent != '0') {
+            if (amountEach[i].textContent !== '0') {
+
+                let multiplier = amountEach[i].textContent;
+
                 item.querySelector('img').style.display = 'block';
                 item.querySelector('img').addEventListener('click', (e) => {
+
                     if (e.target == item.querySelector('img') && document.querySelector('.pcFrame').style.display == 'none') {
                         document.querySelector('.pcFrame').style.display = 'block';
+
+                        mountSingleChain(data, i, multiplier);
+
                     } else {
                         document.querySelector('.pcFrame').style.display = 'none';
+                        document.querySelector('.single-chain').remove();
                     }
                 })
+            } else {
+                item.querySelector('img').style.display = 'none';
             }
         })
     }
 
-    // function mountSingleChain(data, id) {
-    //     let titles = data[0]["titles"],
-    //         ratios = data[1]["ratios"],
-    //         paths = data[2]["paths"];
+    document.querySelector('.pcFrame button').addEventListener('click', () => {
 
-    //     let chains = document.querySelector('.pcDisplay');
-    //         singleChain = document.createElement('div');
+        document.querySelector('.pcFrame').style.display = 'none';
+        document.querySelector('.single-chain').remove();
+    })
 
-    //     singleChain.classList.add('single-chain');
-    //     singleChain.style.gridTemplateColumns = `repeat(${titles[id].length}, 50px)`;
+    function mountSingleChain(data, id, multiplier) {
+        let titles = data[0]["titles"],
+            ratios = data[1]["ratios"],
+            paths = data[2]["paths"];
+
+        let chains = document.querySelector('.pcDisplay');
+            singleChain = document.createElement('div');
+
+        singleChain.classList.add('single-chain');
         
-    //     chains.append(singleChain)
+        chains.append(singleChain)
 
-    //     for (let i = 0; i < titles[id].length; i++) {
-    //         let div = document.createElement('div');
+        for (let i = 0; i < titles[id].length; i++) {
+            let div = document.createElement('ol'),
+                plus = document.createElement('div');
 
-    //         div.innerHTML = `
-    //             <div><img src=${paths[id][i]}></div>
-    //             <div>${titles[id][i]}</div>
-    //             <div>${ratios[id][i]}</div>
-    //         `
-    //         singleChain.append(div);
-    //     }
-    // }
+            plus.textContent = '+';
+            plus.style.width = '25px';
+            plus.style.display = 'inline-block'
 
-    // mountSingleChain(data, 0)
+            let numberOfPlants = Math.ceil(multiplier * ratios[id][i] / 100),
+                percentageValue = (multiplier * ratios[id][i] / numberOfPlants).toFixed(1);
+
+            div.innerHTML = `
+                <li>${numberOfPlants}x</li>
+                <li><img src=${paths[id][i]}></li>
+                <li>${titles[id][i]}</li>
+                <li>(${percentageValue}%)</li>
+            `
+            singleChain.append(div);
+
+            titles[id][i + 1] ? div.insertAdjacentElement('afterend', plus) : null;
+        }
+    
+    }
     
 })

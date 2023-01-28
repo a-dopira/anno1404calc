@@ -76,7 +76,7 @@ button {
 
 .fade {
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 3s;
 }
 
 @keyframes fade{
@@ -262,8 +262,7 @@ a {
     margin-top: 50px;
 }
 
-.pcDisplay div div {
-    display: inline-grid;
-    width: 100px;
-    justify-content: center;
+.pcDisplay div ol {
+    display: inline-block;
+    padding: 0;
 }
