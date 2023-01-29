@@ -398,12 +398,22 @@ window.addEventListener('DOMContentLoaded', () => {
             `
             this.parentSelector.append(td)
         }
+
+        renderDiff() {
+            const td = document.createElement('td');
+            td.textContent = `
+                <span>-</span>
+            `;
+
+            this.parentSelector.append(td);
+        }
     }
     
     goodsDB.forEach(({img}) => new TableCells(img, '.itemsRow').renderImages());
     goodsDB.forEach(() => new TableCells(null, '.amount').renderAmount());
     goodsDB.forEach(() => new TableCells(null, '.utilization').renderUtilization());
     goodsDB.forEach(() => new TableCells(null, '#production_chains').renderChains());
+    goodsDB.forEach(() => new TableCells(null, '#diffFrame').renderDiff())
 
     // calc itself
 
@@ -556,5 +566,46 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     
     }
+
+    // memorize
+
+    const memorizeButton = document.querySelector('.memorize');
+
+    function memorizeAmount() {
+        localStorage.clear();
+
+        amountEach.forEach((item, i) => {
+            localStorage.setItem(i, item.textContent)
+        })
+    }
+
+    memorizeButton.addEventListener('click', memorizeAmount)
+
+    // compare
+
+    const compareButton = document.querySelector('.compare'),
+          diffFrame = document.querySelector('#diffFrame'),
+          diffTable = document.querySelectorAll('#diffFrame td');
+
+    function compareAmount() {
+        diffFrame.style.display = 'table-row';
+
+        diffTable.forEach((item, i) => {
+            let difference =  amountEach[i].textContent - localStorage.getItem(i);
+
+            if (difference > 0) {
+                item.textContent = `+${difference}`
+            } else if (difference < 0) {
+                item.textContent = `-${difference}`
+            } else {
+                item.textContent = 0;
+            }
+
+        })
+
+        localStorage.clear();
+    }
+
+    compareButton.addEventListener('click', compareAmount)
     
 })

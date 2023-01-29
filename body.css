@@ -53,25 +53,18 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
-.nav ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: inline;
-}
-
-.nav ol li {
-    border: 2px solid #cecece;
-    padding: 5px;
-    margin: 0 5px 0 0;
-    display: inline;
-}
 
 .nav ul li{
-    display: inline;
+    display: inline-block;
     list-style: none;
-    padding: 0;
-    margin: 0;
+}
+
+.nav ul {
+    display: inline-block;
+}
+
+.nav .top-buttons {
+    display: inline-block;
 }
 
 .fade {
@@ -86,16 +79,10 @@ button {
 
 li {
     display: list-item;
-    text-align: -webkit-match-parent;
     list-style: none;
 }
 
 /*inputFrame, ввод кол-ва населения*/
-
-#inputFrame {
-    padding: 0;
-    margin: 0;
-}
 
 #inputFrame .inhabitants {
     text-align: center;
@@ -120,7 +107,7 @@ li {
     padding: 0;
 }
 
-#difFrame {
+#diffFrame {
     display: none;
 }
 
