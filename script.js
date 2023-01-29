@@ -593,13 +593,7 @@ window.addEventListener('DOMContentLoaded', () => {
         diffTable.forEach((item, i) => {
             let difference =  amountEach[i].textContent - localStorage.getItem(i);
 
-            if (difference > 0) {
-                item.textContent = `+${difference}`
-            } else if (difference < 0) {
-                item.textContent = `-${difference}`
-            } else {
-                item.textContent = 0;
-            }
+            item.textContent = difference > 0 ? `+${difference}` : difference < 0 ? `-${difference}` : 0;
 
         })
 
