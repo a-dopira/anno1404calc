@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!**********************!*\
+  !*** ./js/script.js ***!
+  \**********************/
 window.addEventListener('DOMContentLoaded', () => {
 
     let inhabitantsDB = [
@@ -216,11 +221,11 @@ window.addEventListener('DOMContentLoaded', () => {
         meat: [{"Butchery": 100, img: "images/goods/iconFleisch.png"}, {"Cattle farm": 200, img: "images/fabrics/iconCattle.png"}, {"Saltworks": 48, img: "images/fabrics/iconSaltworks.png"}, {"Salt mine": 48, img: "images/fabrics/iconSaltmine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
         cider: [{"Cider farm": 100, img: "images/goods/iconMost.png"}],
         beer: [{"Monastery brewery": 100, img: "images/goods/iconBier.png"}, {"Crop farm": 100, img: "images/fabrics/iconCrop.png"}, {"Monastery garden": 100, img: "images/fabrics/iconMonastery.png"}],
-        wine: [{"Wine press": 100, img: "images/goods/iconWein.png"}, {"Vineyard": 300, img: "images/fabrics/iconVineyard.png"}, {"Barrel Cooperage": 100, img: "images/fabrics/iconBarrelCooperage.png"}, {"Lumberjacks's hut": 100, img: "images/fabrics/iconWood.png"}, {"Iron Smelter": 50, img: "images/fabrics/iconIronSmelter.png"}, {"Iron Mine": 50, img: "images/fabrics/iconIronMine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
+        wine: [{"Wine press": 100, img: "images/goods/iconWein.png"}, {"Vineyard": 300, img: "images/fabrics/iconVineyard.png"}, {"Barrel Cooperage": 100, img: "images/fabrics/iconBarellCooperage.png"}, {"Lumberjacks's hut": 100, img: "images/fabrics/iconWood.png"}, {"Iron Smelter": 50, img: "images/fabrics/iconIronSmelter.png"}, {"Iron Mine": 50, img: "images/fabrics/iconIronMine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
         linenGarments: [{"Weaver's hut": 100, img: "images/goods/iconLeinenkutten.png"}, {"Hemp plantation": 200, img: "images/fabrics/iconHemp.png"}],
         leatherJerkins: [{"Tannery": 100, img: "images/goods/iconLederwaemse.png"}, {"Pig farm": 100, img: "images/fabrics/iconPig.png"}, {"Saltworks": 50, img: "images/fabrics/iconSaltworks.png"}, {"Salt mine": 50, img: "images/fabrics/iconSaltmine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
-        furCoats: [{"Furrier's Workshop": 100, img: "images/goods/iconPelzmaentel.png"}, {"Trapper's lodge": 100, img: "images/fabrics/iconTrapper.png"}, {"Saltworks": 32, img: "images/fabrics/iconSaltworks"}, {"Salt mine": 32, img: "images/fabrics/iconSaltmine"}, {"Charcoal Burner's Hut": 32, img: "images/fabrics/iconCoal1.png"}],
-        brocadeRobes: [{"Silk Weaving Mill": 100, img: "images/goods/iconBrokatgewaender.png"}, {"Silk Plantation": 200, img: "images/fabrics/iconSilk.png"}, {"Gold Smelter": 100, img: "images/fabrics/iconGoldSmelter.png"}, {"Goldmine": 100, img: "images/fabrics/iconGoldMine.png"}, {"Charcoal Burner's Hut": 75, img: "images/fabrics/iconCoal1"}],
+        furCoats: [{"Furrier's Workshop": 100, img: "images/goods/iconPelzmaentel.png"}, {"Trapper's lodge": 100, img: "images/fabrics/iconTrapper.png"}, {"Saltworks": 32, img: "images/fabrics/iconSaltworks.png"}, {"Salt mine": 32, img: "images/fabrics/iconSaltmine.png"}, {"Charcoal Burner's Hut": 32, img: "images/fabrics/iconCoal1.png"}],
+        brocadeRobes: [{"Silk Weaving Mill": 100, img: "images/goods/iconBrokatgewaender.png"}, {"Silk Plantation": 200, img: "images/fabrics/iconSilk.png"}, {"Gold Smelter": 100, img: "images/fabrics/iconGoldSmelter.png"}, {"Goldmine": 100, img: "images/fabrics/iconGoldMine.png"}, {"Charcoal Burner's Hut": 75, img: "images/fabrics/iconCoal1.png"}],
         books: [{"Printing House": 100, img: "images/goods/iconBuecher.png"}, {"Indigo farm": 200, img: "images/fabrics/iconIndigo.png"}, {"Paper Mill": 50, img: "images/fabrics/iconPaper.png"}, {"Lumberjacks's hut": 100, img: "images/fabrics/iconWood.png"}],
         candlesticks: [{"Redsmith's Workshop": 100, img: "images/goods/iconKerzenleuchter.png"}, {"Candlemaker's Workshop": 150, img: "images/fabrics/iconCandlemaker.png"}, {"Apiary": 300, img: "images/fabrics/iconApiary.png"}, {"Hemp plantation": 150, img: "images/fabrics/iconHemp.png"}, {"Copper Smelter": 75, img: "images/fabrics/iconCopperSmelter.png"}, {"Copper Mine": 75, img: "images/fabrics/iconCopperMine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
         glasses: [{"Optician's Workshop": 100, img: "images/goods/iconBrillen.png"}, {"Quarz Quary": 75, img: "images/fabrics/iconQuarz.png"}, {"Copper Smelter": 75, img: "images/fabrics/iconCopperSmelter.png"}, {"Copper Mine": 75, img: "images/fabrics/iconCopperMine.png"}, {"Charcoal Burner's Hut": 50, img: "images/fabrics/iconCoal1.png"}],
@@ -417,16 +422,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // calc itself
 
-    const inhabitantsRadio = document.querySelectorAll('.inhabitantInput');
+    // const inhabitantsRadio = document.querySelectorAll('.inhabitantInput');
     const amountEach = document.querySelectorAll('.amount td');
     const calcButton = document.querySelector('.button_2__calculate');
 
     function calc() {
+
+        resetTable();
+
         let product = [];
        
-        inhabitantsRadio.forEach(item => product.push(item.value));
+        allInhabitantsInputs.forEach(item => product.push(item.value));
 
-        if(!(product.every(i => i === '0'))) {
+        if(!(product.every(i => +i > 0))) {
             tableBottom.classList.contains('fade') ? tableBottom.classList.remove('fade') : tableBottom.classList.add('fade');
         } else {
             tableBottom.classList.add('fade');
@@ -462,7 +470,7 @@ window.addEventListener('DOMContentLoaded', () => {
         amountEach.forEach((item, i) => item.textContent = allCeiledProducts[i])
 
         utilization(allProducts, allCeiledProducts, utilizations);
-        showLupe()
+        showLupe(amountEach)
     };
 
     calcButton.addEventListener('click', calc);
@@ -500,11 +508,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const pChains = document.querySelectorAll('#production_chains td');
 
-    function showLupe() {
+    function showLupe(amount) {
         pChains.forEach((item, i) => {
-            if (amountEach[i].textContent !== '0') {
+            if (+amount[i].textContent > 0) {
 
-                let multiplier = amountEach[i].textContent;
+                let multiplier = amount[i].textContent;
 
                 item.querySelector('img').style.display = 'block';
                 item.querySelector('img').addEventListener('click', (e) => {
@@ -524,6 +532,8 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
     }
+
+    // close button
 
     document.querySelector('.pcFrame button').addEventListener('click', () => {
 
@@ -600,6 +610,33 @@ window.addEventListener('DOMContentLoaded', () => {
         localStorage.clear();
     }
 
-    compareButton.addEventListener('click', compareAmount)
+    compareButton.addEventListener('click', compareAmount);
+
+    // reset 
+
+    const resetButton = document.querySelector('.button_2__reset');
+
+    function resetTable() {
+        amountEach.forEach(item => {
+            item.textContent = 0
+        });
+
+        pChains.forEach(item => {
+            item.querySelector('img').style.display = 'none';
+        })
+
+        utilizations.forEach(item => {
+            let dashItem = item.querySelector('span'),
+                whiteSpace = item.querySelector('.space');
+
+                dashItem.textContent = '-';
+                whiteSpace.style.height = '50px';
+            })
+    }
+
+    resetButton.addEventListener('click', resetTable)
     
 })
+/******/ })()
+;
+//# sourceMappingURL=bundle.js.map
