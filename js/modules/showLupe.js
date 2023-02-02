@@ -1,8 +1,11 @@
-import { data } from "./db";
+import { getChains } from "../services/service";
 import { mountSingleChain } from "./singleChain";
 
 function showLupe(amount) {
-    const pChains = document.querySelectorAll('#production_chains td');
+    const pChains = document.querySelectorAll('#production_chains td'),
+          chainsDB = 'http://localhost:3000/chains';
+
+    let data = getChains(chainsDB);
     
     pChains.forEach((item, i) => {
         if (+amount[i].textContent > 0) {

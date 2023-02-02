@@ -167,7 +167,7 @@ li {
     float: left;
     height: 33px;
     width: 14px;
-    background: url(images/buttons/button_1_left.png);
+    background: url(../images/buttons/button_1_left.png);
 }
 
 .button_2_center {
@@ -176,14 +176,14 @@ li {
     color: #432912;
     font-weight: bold;
     line-height: 33px;
-    background: url(images/buttons/button_1_center.png);
+    background: url(../images/buttons/button_1_center.png);
 }
 
 .button_2_right {
     float: left;
     height: 33px;
     width: 14px;
-    background: url(images/buttons/button_1_right.png);
+    background: url(../images/buttons/button_1_right.png);
 }
 
 h1 {

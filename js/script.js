@@ -8,18 +8,21 @@ import resetButton from "./modules/resetButton";
 import closeButton from "./modules/closeButton";
 import memorizeButton from "./modules/memorizeButton";
 import compareButton from "./modules/compareButton";
-
-import { inhabitantsDB, goodsDB} from "./modules/db";
 import calcItself from "./modules/calculator";
+
+import { getInhabitants, getGoods } from "./services/service";
 
 window.addEventListener('DOMContentLoaded', () => {
 
-    inhabitantsSetup(inhabitantsDB);
+const inhabitantsDB = 'http://localhost:3000/inhabitantsDB',
+      goodsDB = 'http://localhost:3000/goodsDB';
+
+    inhabitantsSetup(() => getInhabitants(inhabitantsDB));
     mainSwitcher();
-    individualSwitcher(inhabitantsDB);
+    individualSwitcher(() => getInhabitants(inhabitantsDB));
     topButtons();
-    selectDropdowns(goodsDB);
-    tableContainer(goodsDB);
+    selectDropdowns(() => getGoods(goodsDB));
+    tableContainer(() => getGoods(goodsDB));
     calcItself();
     closeButton();
     memorizeButton();
