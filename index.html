@@ -1,161 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anno 1404 calculator</title>
-    <link rel="stylesheet" href="styles/body.css">
-    <link rel="icon" href="images/favicon.ico">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Anno 1404 Calculator</title>
+  </head>
+  <body>
     <div class="wrapper">
-        <div class="center">
-            <div>
-                <img src="logo.jpg" height='177' width="1200"\>
-            </div>
-            <div class="title">Production calculator</div>
-            <div class="nav">
-                <div class="top-buttons">
-                    <button class="top-buttons_item">Calculator</button>
-                    <button class="top-buttons_item">Production chains</button>
-                    <button class="top-buttons_item">Supply</button>
-                    <button class="top-buttons_item">Client</button>
-                    <button class="top-buttons_item">Contact</button>
-                    <button class="top-buttons_item">Imprint</button>
-                    <button class="top-buttons_item">Donate</button>
-                </div>
-                <ul>
-                    <label for="language">Language</label>
-                    <li id="language">
-                        <select>
-                            <option value="de">English</option>
-                            <option value="en">Deutch</option>
-                            <option value="fr">Francias</option>
-                            <option value="ru">Русский</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
+      <div class="header">
+        <div class="title">Production calculator</div>
+        <div class="nav">
+          <a href="#" class="nav-item active">Calculator</a>
+          <a href="#" class="nav-item">Production chains</a>
+          <a href="#" class="nav-item">Supply</a>
+          <a href="#" class="nav-item">Client</a>
+          <a href="#" class="nav-item">Contact</a>
+          <a href="#" class="nav-item">Imprint</a>
+          <a href="#" class="nav-item">Donate</a>
         </div>
-        <div id="inputFrame">
-            <div class="inhabitants">
-                <ol style="padding-right: 5px; border-right: 1px solid #cecece;">
-                    <li>
-                        <ul>
-                            <li>
-                                <input type="radio" name="switchRadio" value="inhabitants" checked="checked" alt\>
-                            </li>
-                            <li> 
-                                <img src="images/inhabitants/iconInhabitants.png" alt="iconInhabitants">
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <ul>
-                            <li>
-                                <input type="radio" name="switchRadio" value="house" alt\>
-                            </li>
-                            <li> 
-                                <img src="images/inhabitants/iconHouse.png" alt="iconHouse">
-                            </li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-            <div class="items">
-            </div>
-            <div class="cmd floatright">
-                <ol>
-                    <li>
-                        <label>Evolution:</label> <input type="checkbox" name="evocheck" checked="checked" alt=""> 
-                    </li>
-                    <li>
-                        <div class="button_2">
-                            <div class="button_2_left"></div>
-                            <div class="button_2_center">Save</div>
-                            <div class="button_2_right"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="button_2">
-                            <div class="button_2_left"></div>
-                            <div class="button_2_center">Load</div>
-                            <div class="button_2_right"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div  class="button_2">
-                            <div class="button_2_left"></div>
-                            <div class="button_2_center">Import</div>
-                            <div class="button_2_right"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="button_2__reset">
-                            <div class="button_2_left"></div>
-                            <div class="button_2_center">Reset</div>
-                            <div class="button_2_right"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="button_2__calculate">
-                            <div class="button_2_left"></div>
-                            <div class="button_2_center">Calculate</div>
-                            <div class="button_2_right"></div>
-                        </div>
-                    </li>
-                </ol>
-            </div>
+        <div class="language-selector">
+          <label for="language">Language:</label>
+          <select id="language">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="ru">Русский</option>
+          </select>
         </div>
-        <h1>Production needs</h1>
-        <h2>Shows the number of production chains needed to satisfy your inhabitants demands</h2>
-        <div id="result">
-            <div class="cmd floatright" style="margin-bottom:5px;">
-                <ol>
-                    <li>
-                        <div class="button_2 memorize">
-                            <div class="button_2_left"></div>
-                            <div class="button_2_center">Memorize</div>
-                            <div class="button_2_right"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="button_2 compare">
-                            <div class="button_2_left"></div>
-                            <div class="button_2_center">Compare</div>
-                            <div class="button_2_right"></div>
-                        </div>
-                    </li>
-                </ol>
+      </div>
+
+      <div class="input-section">
+        <div class="inhabitants-row"></div>
+        <div class="items-row"></div>
+
+        <div class="controls">
+          <div class="evolution-check">
+            <input type="checkbox" id="evolution" checked />
+            <label for="evolution">Evolution:</label>
+          </div>
+          <button class="btn">Save</button>
+          <button class="btn">Load</button>
+          <button class="btn">Import</button>
+          <button class="btn btn-reset">Reset</button>
+          <button class="btn btn-calculate">Calculate</button>
         </div>
-        <div style="clear:both;"></div> 
-        <table class="bordertable">
-            <tbody>
-                <tr class="itemsRow">
-                    <th></th>
-                </tr>
-                <tr class="amount">
-                    <th>Amount</th>
-                </tr>
-                <tr id="diffFrame">
-                    <th>Difference</th>
-                </tr>
-                <tr class="utilization">
-                    <th >Utilization</th>
-                </tr>
-                <tr id="production_chains">
-                    <th>Production chains</th>
-                </tr>
-            </tbody>
-        </table>
+      </div>
+
+      <div class="section-title">Production needs</div>
+      <div class="section-subtitle">
+        Shows the number of production chains needed to satisfy your inhabitants
+        demands
+      </div>
+
+      <div class="result-controls">
+        <button class="btn memorize">Memorize</button>
+        <button class="btn compare">Compare</button>
+      </div>
+
+      <table class="data-table">
+        <tbody>
+          <tr class="header-row">
+            <th></th>
+            <th colspan="14" class="section-header occident">
+              Required in the Occident
+            </th>
+            <th colspan="7" class="section-header orient">
+              Required in the Orient
+            </th>
+          </tr>
+          <tr class="products-row">
+            <th>Product</th>
+          </tr>
+          <tr class="amounts-row">
+            <th>Amount</th>
+          </tr>
+          <tr id="diffFrame" class="diff-row">
+            <th>Difference</th>
+          </tr>
+          <tr class="utilization-row">
+            <th>Utilization</th>
+          </tr>
+          <tr class="chains-row">
+            <th>Production chains</th>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="modal">
+        <div class="modal-content">
+          <button class="close-btn">&times;</button>
+          <h3 style="margin-bottom: 15px; color: #f4e4c1; font-size: 14px">
+            Production Chain Details
+          </h3>
+          <div class="chain-details"></div>
         </div>
-        <div class="pcFrame" style="display: none">
-            <div class="pcDisplay">
-                <button>Close</button>
-            </div>
-        </div>
+      </div>
     </div>
-    <script src="./js/bundle.js"></script>
-</body>
+
+    <!-- Scripts -->
+    <script type="module" src="js/services/dataService.js"></script>
+    <script type="module" src="js/services/calculationService.js"></script>
+    <script type="module" src="js/components/inhabitantsComponent.js"></script>
+    <script type="module" src="js/components/itemsComponent.js"></script>
+    <script type="module" src="js/components/tableComponent.js"></script>
+    <script type="module" src="js/components/modalComponent.js"></script>
+    <script type="module" src="js/utils/storage.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </body>
 </html>
