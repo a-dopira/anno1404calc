@@ -17,9 +17,11 @@ window.addEventListener('DOMContentLoaded', () => {
 const inhabitantsDB = 'http://localhost:3000/inhabitantsDB',
       goodsDB = 'http://localhost:3000/goodsDB';
 
-    inhabitantsSetup(() => getInhabitants(inhabitantsDB));
+    getInhabitants(inhabitantsDB).then(data => {
+        inhabitantsSetup(data);
+        individualSwitcher(data);
+    });
     mainSwitcher();
-    individualSwitcher(() => getInhabitants(inhabitantsDB));
     topButtons();
     selectDropdowns(() => getGoods(goodsDB));
     tableContainer(() => getGoods(goodsDB));
