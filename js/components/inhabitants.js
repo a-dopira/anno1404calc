@@ -33,7 +33,7 @@ export class InhabitantsComponent {
           data-type="${inhabitant.title.toLowerCase()}"
           data-index="${index}"
         />
-        <small>👥 Inhabitants</small>
+        <small>Inhabitants</small>
         <input
           type="number"
           class="house-input"
@@ -42,7 +42,7 @@ export class InhabitantsComponent {
           data-type="${inhabitant.title.toLowerCase()}"
           data-index="${index}"
         />
-        <small>🏠 Houses</small>
+        <small>Houses</small>
         <div class="inhabitant-label">${inhabitant.title}</div>
       `;
       

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>Anno 1404 Calculator</title>
   </head>
@@ -35,13 +36,8 @@
         <div class="items-row"></div>
 
         <div class="controls">
-          <div class="evolution-check">
-            <input type="checkbox" id="evolution" checked />
-            <label for="evolution">Evolution:</label>
-          </div>
-          <button class="btn">Save</button>
-          <button class="btn">Load</button>
-          <button class="btn">Import</button>
+          <button class="btn btn-save">Save</button>
+          <button class="btn btn-load">Load</button>
           <button class="btn btn-reset">Reset</button>
           <button class="btn btn-calculate">Calculate</button>
         </div>
@@ -98,13 +94,14 @@
       </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- scripts -->
     <script type="module" src="js/services/dataService.js"></script>
     <script type="module" src="js/services/calculationService.js"></script>
-    <script type="module" src="js/components/inhabitantsComponent.js"></script>
-    <script type="module" src="js/components/itemsComponent.js"></script>
-    <script type="module" src="js/components/tableComponent.js"></script>
-    <script type="module" src="js/components/modalComponent.js"></script>
+    <script type="module" src="js/services/xmlService.js"></script>
+    <script type="module" src="js/components/inhabitants.js"></script>
+    <script type="module" src="js/components/items.js"></script>
+    <script type="module" src="js/components/table.js"></script>
+    <script type="module" src="js/components/modal.js"></script>
     <script type="module" src="js/utils/storage.js"></script>
     <script type="module" src="js/app.js"></script>
   </body>

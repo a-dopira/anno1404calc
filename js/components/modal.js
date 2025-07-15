@@ -107,7 +107,6 @@ export class ModalComponent {
         arrow.style.fontSize = '16px';
         arrow.style.color = '#4CAF50';
         arrow.style.margin = '5px 0';
-        arrow.textContent = '⬇️';
         this.chainDetails.appendChild(arrow);
       }
     });

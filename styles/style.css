@@ -420,10 +420,6 @@ body {
   transition: transform 0.2s;
 }
 
-.chain-item:hover {
-  transform: translateX(5px);
-}
-
 /* responsive design */
 @media (max-width: 1200px) {
   .inhabitants-row {
