@@ -60,3 +60,9 @@ XML example:
 </Anno1404Calculator>
 ```
 you can download CSV file with needs from Supply page
+
+## how to run
+
+this project must be run via a local web server due to browser restrictions on loading local json files.
+I highly recommend LiveServer, in-built extension in vscode for this reason
+
