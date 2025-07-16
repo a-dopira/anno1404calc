@@ -1,8 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# assets
 images/
-logo.jpg
 
+# unfinished pages
+
+js/pages/ContactPage.js
+js/pages/DonatePage.js
+
+# data bases
+
+db_genuine.json
 # dependencies
 /node_modules
 /.pnp

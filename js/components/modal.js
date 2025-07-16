@@ -110,20 +110,6 @@ export class ModalComponent {
         this.chainDetails.appendChild(arrow);
       }
     });
-
-    const legend = document.createElement('div');
-    legend.style.marginTop = '20px';
-    legend.style.padding = '10px';
-    legend.style.background = 'rgba(0,0,0,0.2)';
-    legend.style.borderRadius = '5px';
-    legend.style.fontSize = '10px';
-    legend.innerHTML = `
-      <div style="color: #f4e4c1; font-weight: bold; margin-bottom: 5px;">Utilization Colors:</div>
-      <div style="color: #88ff6d;">🟢 Green: ≤60% (Efficient)</div>
-      <div style="color: #f7ffa2;">🟡 Yellow: 61-93% (Good)</div>
-      <div style="color: #ff5353;">🔴 Red: ≥94% (Overloaded)</div>
-    `;
-    this.chainDetails.appendChild(legend);
   }
 
   getUtilizationColor(utilization, alpha = 1) {

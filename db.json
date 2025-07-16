@@ -1,473 +1,820 @@
 {
-    "inhabitantsDB": [
-      {
-        "img": "images/inhabitants/iconBeggar.png",
-        "alt": "iconBeggar",
-        "title": "Beggar",
-        "ratio": 500
-      },
-      {
-        "img": "images/inhabitants/iconPeasant.png",
-        "alt": "iconPeasant",
-        "title": "Peasant",
-        "ratio": 8
-      },
-      {
-        "img": "images/inhabitants/iconCitizen.png",
-        "alt": "iconCitizen",
-        "title": "Citizen",
-        "ratio": 15
-      },
-      {
-        "img": "images/inhabitants/iconPatrician.png",
-        "alt": "iconPatrician",
-        "title": "Patrician",
-        "ratio": 25
-      },
-      {
-        "img": "images/inhabitants/iconNobleman.png",
-        "alt": "iconNobelman",
-        "title": "Nobelman",
-        "ratio": 40
-      },
-      {
-        "img": "images/inhabitants/iconNomad.png",
-        "alt": "iconNomad",
-        "title": "Nomad",
-        "ratio": 15
-      },
-      {
-        "img": "images/inhabitants/iconEnvoy.png",
-        "alt": "iconEnvoy",
-        "title": "Envoy",
-        "ratio": 25
-      }
-    ],
-    "goodsDB": [
-      {
-        "title": "fish",
-        "img": "images/goods/iconFisch.png",
-        "id": 1
-      },
-      {
-        "title": "spices",
-        "img": "images/goods/iconGewuerze.png",
-        "id": 2
-      },
-      {
-        "title": "bread",
-        "img": "images/goods/iconBrot.png",
-        "id": 3
-      },
-      {
-        "title": "meat",
-        "img": "images/goods/iconFleisch.png",
-        "id": 4
-      },
-      {
-        "title": "cider",
-        "img": "images/goods/iconMost.png",
-        "id": 5
-      },
-      {
-        "title": "beer",
-        "img": "images/goods/iconBier.png",
-        "id": 6
-      },
-      {
-        "title": "wine",
-        "img": "images/goods/iconWein.png",
-        "id": 7
-      },
-      {
-        "title": "linen_garments",
-        "img": "images/goods/iconLeinenkutten.png",
-        "id": 8
-      },
-      {
-        "title": "leather_jerkins",
-        "img": "images/goods/iconLederwaemse.png",
-        "id": 9
-      },
-      {
-        "title": "fur_coats",
-        "img": "images/goods/iconPelzmaentel.png",
-        "id": 10
-      },
-      {
-        "title": "brocade robes",
-        "img": "images/goods/iconBrokatgewaender.png",
-        "id": 11
-      },
-      {
-        "title": "books",
-        "img": "images/goods/iconBuecher.png",
-        "id": 12
-      },
-      {
-        "title": "candlesticks",
-        "img": "images/goods/iconKerzenleuchter.png",
-        "id": 13
-      },
-      {
-        "title": "glasses",
-        "img": "images/goods/iconBrillen.png",
-        "id": 14
-      },
-      {
-        "title": "dates",
-        "img": "images/goods/iconDatteln.png",
-        "id": 15
-      },
-      {
-        "title": "milk",
-        "img": "images/goods/iconMilch.png",
-        "id": 16
-      },
-      {
-        "title": "carpets",
-        "img": "images/goods/iconTeppiche.png",
-        "id": 17
-      },
-      {
-        "title": "coffee",
-        "img": "images/goods/iconKaffee.png",
-        "id": 18
-      },
-      {
-        "title": "pearl necklaces",
-        "img": "images/goods/iconPerlenketten.png",
-        "id": 19
-      },
-      {
-        "title": "parfumes",
-        "img": "images/goods/iconDuftwasser.png",
-        "id": 20
-      },
-      {
-        "title": "marzipans",
-        "img": "images/goods/iconMarzipan.png",
-        "id": 21
-      }
-    ],
-    "chains": {
-      "fish": [
-        {
-          "Fishing lodge": 100,
-          "img": "images/goods/iconFisch.png"
+  "inhabitantsDB": [
+    {
+      "img": "images/inhabitants/iconBeggar.png",
+      "alt": "iconBeggar",
+      "title": "Beggar",
+      "ratio": 500,
+      "index": 0
+    },
+    {
+      "img": "images/inhabitants/iconPeasant.png",
+      "alt": "iconPeasant",
+      "title": "Peasant",
+      "ratio": 8,
+      "index": 1
+    },
+    {
+      "img": "images/inhabitants/iconCitizen.png",
+      "alt": "iconCitizen",
+      "title": "Citizen",
+      "ratio": 15,
+      "index": 2
+    },
+    {
+      "img": "images/inhabitants/iconPatrician.png",
+      "alt": "iconPatrician",
+      "title": "Patrician",
+      "ratio": 25,
+      "index": 3
+    },
+    {
+      "img": "images/inhabitants/iconNobleman.png",
+      "alt": "iconNobelman",
+      "title": "Nobelman",
+      "ratio": 40,
+      "index": 4
+    },
+    {
+      "img": "images/inhabitants/iconNomad.png",
+      "alt": "iconNomad",
+      "title": "Nomad",
+      "ratio": 15,
+      "index": 5
+    },
+    {
+      "img": "images/inhabitants/iconEnvoy.png",
+      "alt": "iconEnvoy",
+      "title": "Envoy",
+      "ratio": 25,
+      "index": 6
+    }
+  ],
+
+  "goodsDB": [
+    { "title": "fish", "img": "images/goods/iconFisch.png", "id": 1 },
+    { "title": "spices", "img": "images/goods/iconGewuerze.png", "id": 2 },
+    { "title": "bread", "img": "images/goods/iconBrot.png", "id": 3 },
+    { "title": "meat", "img": "images/goods/iconFleisch.png", "id": 4 },
+    { "title": "cider", "img": "images/goods/iconMost.png", "id": 5 },
+    { "title": "beer", "img": "images/goods/iconBier.png", "id": 6 },
+    { "title": "wine", "img": "images/goods/iconWein.png", "id": 7 },
+    { "title": "linen garments", "img": "images/goods/iconLeinenkutten.png", "id": 8 },
+    { "title": "leather jerkins", "img": "images/goods/iconLederwaemse.png", "id": 9 },
+    { "title": "fur coats", "img": "images/goods/iconPelzmaentel.png", "id": 10 },
+    { "title": "brocade robes", "img": "images/goods/iconBrokatgewaender.png", "id": 11 },
+    { "title": "books", "img": "images/goods/iconBuecher.png", "id": 12 },
+    { "title": "candlesticks", "img": "images/goods/iconKerzenleuchter.png", "id": 13 },
+    { "title": "glasses", "img": "images/goods/iconBrillen.png", "id": 14 },
+    { "title": "dates", "img": "images/goods/iconDatteln.png", "id": 15 },
+    { "title": "milk", "img": "images/goods/iconMilch.png", "id": 16 },
+    { "title": "carpets", "img": "images/goods/iconTeppiche.png", "id": 17 },
+    { "title": "coffee", "img": "images/goods/iconKaffee.png", "id": 18 },
+    { "title": "pearl necklaces", "img": "images/goods/iconPerlenketten.png", "id": 19 },
+    { "title": "parfumes", "img": "images/goods/iconDuftwasser.png", "id": 20 },
+    { "title": "marzipans", "img": "images/goods/iconMarzipan.png", "id": 21 }
+  ],
+
+  "productionRequirements": {
+    "fish": {
+      "consumers": [
+        { 
+          "type": "Beggar", 
+          "index": 0,
+          "ratio": 285
+        },
+        { 
+          "type": "Peasant", 
+          "index": 1,
+          "ratio": 200
+        },
+        { 
+          "type": "Citizen", 
+          "index": 2,
+          "ratio": 500
+        },
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 909
+        },
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1250
         }
-      ],
-      "spices": [
-        {
-          "Spice farm": 100,
-          "img": "images/goods/iconGewuerze.png"
+      ]
+    },
+
+    "spices": {
+      "consumers": [
+        { 
+          "type": "Citizen", 
+          "index": 2,
+          "ratio": 500
+        },
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 909
+        },
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1250
         }
-      ],
-      "bread": [
-        {
-          "Bakery": 100,
-          "img": "images/goods/iconBrot.png"
+      ]
+    },
+
+    "bread": {
+      "consumers": [
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 727
         },
-        {
-          "Mill": 100,
-          "img": "images/fabrics/iconFloor.png"
-        },
-        {
-          "Crop farm": 200,
-          "img": "images/fabrics/iconCrop.png"
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1025
         }
-      ],
-      "meat": [
-        {
-          "Butchery": 100,
-          "img": "images/goods/iconFleisch.png"
-        },
-        {
-          "Cattle farm": 200,
-          "img": "images/fabrics/iconCattle.png"
-        },
-        {
-          "Saltworks": 48,
-          "img": "images/fabrics/iconSaltworks.png"
-        },
-        {
-          "Salt mine": 48,
-          "img": "images/fabrics/iconSaltmine.png"
-        },
-        {
-          "Charcoal Burner's Hut": 50,
-          "img": "images/fabrics/iconCoal1.png"
+      ]
+    },
+
+    "meat": {
+      "consumers": [
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1136
         }
-      ],
-      "cider": [
-        {
-          "Cider farm": 100,
-          "img": "images/goods/iconMost.png"
+      ]
+    },
+
+    "cider": {
+      "consumers": [
+        { 
+          "type": "Beggar", 
+          "index": 0,
+          "ratio": 500
+        },
+        { 
+          "type": "Peasant", 
+          "index": 1,
+          "ratio": 340,
+          "condition": {
+            "type": "OR",
+            "conditions": [
+              { "inhabitant": 1, "operator": ">=", "value": 60 },
+              { "inhabitant": 2, "operator": ">", "value": 0 },
+              { "inhabitant": 3, "operator": ">", "value": 0 },
+              { "inhabitant": 4, "operator": ">", "value": 0 }
+            ]
+          },
+          "fallbackRatio": 500
+        },
+        { 
+          "type": "Citizen", 
+          "index": 2,
+          "ratio": 340,
+          "condition": {
+            "type": "OR",
+            "conditions": [
+              { "inhabitant": 1, "operator": ">=", "value": 60 },
+              { "inhabitant": 2, "operator": ">", "value": 0 },
+              { "inhabitant": 3, "operator": ">", "value": 0 },
+              { "inhabitant": 4, "operator": ">", "value": 0 }
+            ]
+          }
+        },
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 652
+        },
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1153
         }
-      ],
-      "beer": [
-        {
-          "Monastery brewery": 100,
-          "img": "images/goods/iconBier.png"
+      ]
+    },
+
+    "beer": {
+      "consumers": [
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 625,
+          "condition": {
+            "type": "OR",
+            "conditions": [
+              { "inhabitant": 3, "operator": ">=", "value": 510 },
+              { "inhabitant": 4, "operator": ">", "value": 0 }
+            ]
+          }
         },
-        {
-          "Crop farm": 100,
-          "img": "images/fabrics/iconCrop.png"
-        },
-        {
-          "Monastery garden": 100,
-          "img": "images/fabrics/iconMonastery.png"
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1071
         }
-      ],
-      "wine": [
-        {
-          "Wine press": 100,
-          "img": "images/goods/iconWein.png"
-        },
-        {
-          "Vineyard": 300,
-          "img": "images/fabrics/iconVineyard.png"
-        },
-        {
-          "Barrel Cooperage": 100,
-          "img": "images/fabrics/iconBarellCooperage.png"
-        },
-        {
-          "Lumberjacks's hut": 100,
-          "img": "images/fabrics/iconWood.png"
-        },
-        {
-          "Iron Smelter": 50,
-          "img": "images/fabrics/iconIronSmelter.png"
-        },
-        {
-          "Iron Mine": 50,
-          "img": "images/fabrics/iconIronMine.png"
-        },
-        {
-          "Charcoal Burner's Hut": 50,
-          "img": "images/fabrics/iconCoal1.png"
+      ]
+    },
+
+    "wine": {
+      "consumers": [
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1000,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 4, "operator": ">=", "value": 1500 }
+            ]
+          }
         }
-      ],
-      "linenGarments": [
-        {
-          "Weaver's hut": 100,
-          "img": "images/goods/iconLeinenkutten.png"
+      ]
+    },
+
+    "linen_garments": {
+      "consumers": [
+        { 
+          "type": "Citizen", 
+          "index": 2,
+          "ratio": 476
         },
-        {
-          "Hemp plantation": 200,
-          "img": "images/fabrics/iconHemp.png"
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 1052
+        },
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 2500
         }
-      ],
-      "leatherJerkins": [
-        {
-          "Tannery": 100,
-          "img": "images/goods/iconLederwaemse.png"
+      ]
+    },
+
+    "leather_jerkins": {
+      "consumers": [
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 1428,
+          "condition": {
+            "type": "OR",
+            "conditions": [
+              { "inhabitant": 3, "operator": ">=", "value": 690 },
+              { "inhabitant": 4, "operator": ">", "value": 0 }
+            ]
+          },
+          "fallbackRatio": 690
         },
-        {
-          "Pig farm": 100,
-          "img": "images/fabrics/iconPig.png"
-        },
-        {
-          "Saltworks": 50,
-          "img": "images/fabrics/iconSaltworks.png"
-        },
-        {
-          "Salt mine": 50,
-          "img": "images/fabrics/iconSaltmine.png"
-        },
-        {
-          "Charcoal Burner's Hut": 50,
-          "img": "images/fabrics/iconCoal1.png"
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 2500
         }
-      ],
-      "furCoats": [
-        {
-          "Furrier's Workshop": 100,
-          "img": "images/goods/iconPelzmaentel.png"
-        },
-        {
-          "Trapper's lodge": 100,
-          "img": "images/fabrics/iconTrapper.png"
-        },
-        {
-          "Saltworks": 32,
-          "img": "images/fabrics/iconSaltworks.png"
-        },
-        {
-          "Salt mine": 32,
-          "img": "images/fabrics/iconSaltmine.png"
-        },
-        {
-          "Charcoal Burner's Hut": 32,
-          "img": "images/fabrics/iconCoal1.png"
+      ]
+    },
+
+    "fur_coats": {
+      "consumers": [
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1562,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 4, "operator": ">=", "value": 950 }
+            ]
+          }
         }
-      ],
-      "brocadeRobes": [
-        {
-          "Silk Weaving Mill": 100,
-          "img": "images/goods/iconBrokatgewaender.png"
-        },
-        {
-          "Silk Plantation": 200,
-          "img": "images/fabrics/iconSilk.png"
-        },
-        {
-          "Gold Smelter": 100,
-          "img": "images/fabrics/iconGoldSmelter.png"
-        },
-        {
-          "Goldmine": 100,
-          "img": "images/fabrics/iconGoldMine.png"
-        },
-        {
-          "Charcoal Burner's Hut": 75,
-          "img": "images/fabrics/iconCoal1.png"
+      ]
+    },
+
+    "brocade robes": {
+      "consumers": [
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 2112,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 4, "operator": ">", "value": 0 }
+            ]
+          }
         }
-      ],
-      "books": [
-        {
-          "Printing House": 100,
-          "img": "images/goods/iconBuecher.png"
+      ]
+    },
+
+    "books": {
+      "consumers": [
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 1875,
+          "condition": {
+            "type": "OR",
+            "conditions": [
+              { "inhabitant": 3, "operator": ">=", "value": 940 },
+              { "inhabitant": 4, "operator": ">", "value": 0 }
+            ]
+          }
         },
-        {
-          "Indigo farm": 200,
-          "img": "images/fabrics/iconIndigo.png"
-        },
-        {
-          "Paper Mill": 50,
-          "img": "images/fabrics/iconPaper.png"
-        },
-        {
-          "Lumberjacks's hut": 100,
-          "img": "images/fabrics/iconWood.png"
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 3333
         }
-      ],
-      "candlesticks": [
-        {
-          "Redsmith's Workshop": 100,
-          "img": "images/goods/iconKerzenleuchter.png"
+      ]
+    },
+
+    "candlesticks": {
+      "consumers": [
+        { 
+          "type": "Patrician", 
+          "index": 3,
+          "ratio": 2500,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 4, "operator": ">=", "value": 3000 }
+            ]
+          }
         },
-        {
-          "Candlemaker's Workshop": 150,
-          "img": "images/fabrics/iconCandlemaker.png"
-        },
-        {
-          "Apiary": 300,
-          "img": "images/fabrics/iconApiary.png"
-        },
-        {
-          "Hemp plantation": 150,
-          "img": "images/fabrics/iconHemp.png"
-        },
-        {
-          "Copper Smelter": 75,
-          "img": "images/fabrics/iconCopperSmelter.png"
-        },
-        {
-          "Copper Mine": 75,
-          "img": "images/fabrics/iconCopperMine.png"
-        },
-        {
-          "Charcoal Burner's Hut": 50,
-          "img": "images/fabrics/iconCoal1.png"
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 3333,
+          "condition": {
+            "type": "OR",
+            "conditions": [
+              { "inhabitant": 4, "operator": ">=", "value": 3000 },
+              { "inhabitant": 4, "operator": ">", "value": 0 }
+            ]
+          }
         }
-      ],
-      "glasses": [
-        {
-          "Optician's Workshop": 100,
-          "img": "images/goods/iconBrillen.png"
-        },
-        {
-          "Quarz Quary": 75,
-          "img": "images/fabrics/iconQuarz.png"
-        },
-        {
-          "Copper Smelter": 75,
-          "img": "images/fabrics/iconCopperSmelter.png"
-        },
-        {
-          "Copper Mine": 75,
-          "img": "images/fabrics/iconCopperMine.png"
-        },
-        {
-          "Charcoal Burner's Hut": 50,
-          "img": "images/fabrics/iconCoal1.png"
+      ]
+    },
+
+    "glasses": {
+      "consumers": [
+        { 
+          "type": "Nobelman", 
+          "index": 4,
+          "ratio": 1709,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 4, "operator": ">=", "value": 1709 }
+            ]
+          }
         }
-      ],
-      "dates": [
-        {
-          "Date plantation": 100,
-          "img": "images/goods/iconDatteln.png"
+      ]
+    },
+
+    "dates": {
+      "consumers": [
+        { 
+          "type": "Nomad", 
+          "index": 5,
+          "ratio": 450
+        },
+        { 
+          "type": "Envoy", 
+          "index": 6,
+          "ratio": 600
         }
-      ],
-      "milk": [
-        {
-          "Goat farm": 100,
-          "img": "images/goods/iconMilch.png"
+      ]
+    },
+
+    "milk": {
+      "consumers": [
+        { 
+          "type": "Nomad", 
+          "index": 5,
+          "ratio": 436,
+          "condition": {
+            "type": "OR",
+            "conditions": [
+              { "inhabitant": 5, "operator": ">=", "value": 145 },
+              { "inhabitant": 6, "operator": ">", "value": 0 }
+            ]
+          }
+        },
+        { 
+          "type": "Envoy", 
+          "index": 6,
+          "ratio": 666
         }
-      ],
-      "carpets": [
-        {
-          "Carpet workshop": 100,
-          "img": "images/goods/iconTeppiche.png"
+      ]
+    },
+
+    "carpets": {
+      "consumers": [
+        { 
+          "type": "Nomad", 
+          "index": 5,
+          "ratio": 909,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 5, "operator": ">=", "value": 295 }
+            ]
+          },
+          "fallbackRatio": 295
         },
-        {
-          "Indigo farm": 100,
-          "img": "images/fabrics/iconIndigo.png"
-        },
-        {
-          "Silk plantation": 100,
-          "img": "images/fabrics/iconSilk.png"
+        { 
+          "type": "Envoy", 
+          "index": 6,
+          "ratio": 1500
         }
-      ],
-      "coffee": [
-        {
-          "Roasting house": 100,
-          "img": "images/goods/iconKaffee.png"
-        },
-        {
-          "Coffee plantation": 100,
-          "img": "images/fabrics/iconCoffeePlantation.png"
+      ]
+    },
+
+    "coffee": {
+      "consumers": [
+        { 
+          "type": "Envoy", 
+          "index": 6,
+          "ratio": 1000
         }
-      ],
-      "pearlNecklaces": [
-        {
-          "Pearl Workshop": 100,
-          "img": "images/goods/iconPerlenketten.png"
-        },
-        {
-          "Pearl Fisher's Hut": 100,
-          "img": "images/fabrics/iconPerlFisher.png"
+      ]
+    },
+
+    "pearl necklaces": {
+      "consumers": [
+        { 
+          "type": "Envoy", 
+          "index": 6,
+          "ratio": 751,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 6, "operator": ">=", "value": 1040 }
+            ]
+          }
         }
-      ],
-      "parfumes": [
-        {
-          "Perfumery": 100,
-          "img": "images/goods/iconDuftwasser.png"
-        },
-        {
-          "Rose Nursery": 300,
-          "img": "images/fabrics/iconRoseNursery.png"
+      ]
+    },
+
+    "parfumes": {
+      "consumers": [
+        { 
+          "type": "Envoy", 
+          "index": 6,
+          "ratio": 2600,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 6, "operator": ">=", "value": 2600 }
+            ]
+          }
         }
-      ],
-      "marzipans": [
-        {
-          "Confectioner's Workshop": 100,
-          "img": "images/goods/iconMarzipan.png"
-        },
-        {
-          "Almond plantation": 200,
-          "img": "images/fabrics/iconAlmond.png"
-        },
-        {
-          "Sugar mill": 100,
-          "img": "images/fabrics/iconSugar.png"
-        },
-        {
-          "Sugarcane Plantation": 200,
-          "img": "images/fabrics/iconSugarcane.png"
+      ]
+    },
+
+    "marzipans": {
+      "consumers": [
+        { 
+          "type": "Envoy", 
+          "index": 6,
+          "ratio": 2453,
+          "condition": {
+            "type": "AND",
+            "conditions": [
+              { "inhabitant": 6, "operator": ">=", "value": 4360 }
+            ]
+          }
         }
       ]
     }
+  },
+
+  "chains": {
+    "fish": [
+      {
+        "Fishing lodge": 100,
+        "img": "images/goods/iconFisch.png"
+      }
+    ],
+    "spices": [
+      {
+        "Spice farm": 100,
+        "img": "images/goods/iconGewuerze.png"
+      }
+    ],
+    "bread": [
+      {
+        "Bakery": 100,
+        "img": "images/goods/iconBrot.png"
+      },
+      {
+        "Mill": 100,
+        "img": "images/fabrics/iconFloor.png"
+      },
+      {
+        "Crop farm": 200,
+        "img": "images/fabrics/iconCrop.png"
+      }
+    ],
+    "meat": [
+      {
+        "Butchery": 100,
+        "img": "images/goods/iconFleisch.png"
+      },
+      {
+        "Cattle farm": 200,
+        "img": "images/fabrics/iconCattle.png"
+      },
+      {
+        "Saltworks": 48,
+        "img": "images/fabrics/iconSaltworks.png"
+      },
+      {
+        "Salt mine": 48,
+        "img": "images/fabrics/iconSaltmine.png"
+      },
+      {
+        "Charcoal Burner's Hut": 50,
+        "img": "images/fabrics/iconCoal1.png"
+      }
+    ],
+    "cider": [
+      {
+        "Cider farm": 100,
+        "img": "images/goods/iconMost.png"
+      }
+    ],
+    "beer": [
+      {
+        "Monastery brewery": 100,
+        "img": "images/goods/iconBier.png"
+      },
+      {
+        "Crop farm": 100,
+        "img": "images/fabrics/iconCrop.png"
+      },
+      {
+        "Monastery garden": 100,
+        "img": "images/fabrics/iconMonastery.png"
+      }
+    ],
+    "wine": [
+      {
+        "Wine press": 100,
+        "img": "images/goods/iconWein.png"
+      },
+      {
+        "Vineyard": 300,
+        "img": "images/fabrics/iconVineyard.png"
+      },
+      {
+        "Barrel Cooperage": 100,
+        "img": "images/fabrics/iconBarellCooperage.png"
+      },
+      {
+        "Lumberjacks's hut": 100,
+        "img": "images/fabrics/iconWood.png"
+      },
+      {
+        "Iron Smelter": 50,
+        "img": "images/fabrics/iconIronSmelter.png"
+      },
+      {
+        "Iron Mine": 50,
+        "img": "images/fabrics/iconIronMine.png"
+      },
+      {
+        "Charcoal Burner's Hut": 50,
+        "img": "images/fabrics/iconCoal1.png"
+      }
+    ],
+    "linen_garments": [
+      {
+        "Weaver's hut": 100,
+        "img": "images/goods/iconLeinenkutten.png"
+      },
+      {
+        "Hemp plantation": 200,
+        "img": "images/fabrics/iconHemp.png"
+      }
+    ],
+    "leather_jerkins": [
+      {
+        "Tannery": 100,
+        "img": "images/goods/iconLederwaemse.png"
+      },
+      {
+        "Pig farm": 100,
+        "img": "images/fabrics/iconPig.png"
+      },
+      {
+        "Saltworks": 50,
+        "img": "images/fabrics/iconSaltworks.png"
+      },
+      {
+        "Salt mine": 50,
+        "img": "images/fabrics/iconSaltmine.png"
+      },
+      {
+        "Charcoal Burner's Hut": 50,
+        "img": "images/fabrics/iconCoal1.png"
+      }
+    ],
+    "fur_coats": [
+      {
+        "Furrier's Workshop": 100,
+        "img": "images/goods/iconPelzmaentel.png"
+      },
+      {
+        "Trapper's lodge": 100,
+        "img": "images/fabrics/iconTrapper.png"
+      },
+      {
+        "Saltworks": 32,
+        "img": "images/fabrics/iconSaltworks.png"
+      },
+      {
+        "Salt mine": 32,
+        "img": "images/fabrics/iconSaltmine.png"
+      },
+      {
+        "Charcoal Burner's Hut": 32,
+        "img": "images/fabrics/iconCoal1.png"
+      }
+    ],
+    "brocade robes": [
+      {
+        "Silk Weaving Mill": 100,
+        "img": "images/goods/iconBrokatgewaender.png"
+      },
+      {
+        "Silk Plantation": 200,
+        "img": "images/fabrics/iconSilk.png"
+      },
+      {
+        "Gold Smelter": 100,
+        "img": "images/fabrics/iconGoldSmelter.png"
+      },
+      {
+        "Goldmine": 100,
+        "img": "images/fabrics/iconGoldMine.png"
+      },
+      {
+        "Charcoal Burner's Hut": 75,
+        "img": "images/fabrics/iconCoal1.png"
+      }
+    ],
+    "books": [
+      {
+        "Printing House": 100,
+        "img": "images/goods/iconBuecher.png"
+      },
+      {
+        "Indigo farm": 200,
+        "img": "images/fabrics/iconIndigo.png"
+      },
+      {
+        "Paper Mill": 50,
+        "img": "images/fabrics/iconPaper.png"
+      },
+      {
+        "Lumberjacks's hut": 100,
+        "img": "images/fabrics/iconWood.png"
+      }
+    ],
+    "candlesticks": [
+      {
+        "Redsmith's Workshop": 100,
+        "img": "images/goods/iconKerzenleuchter.png"
+      },
+      {
+        "Candlemaker's Workshop": 150,
+        "img": "images/fabrics/iconCandlemaker.png"
+      },
+      {
+        "Apiary": 300,
+        "img": "images/fabrics/iconApiary.png"
+      },
+      {
+        "Hemp plantation": 150,
+        "img": "images/fabrics/iconHemp.png"
+      },
+      {
+        "Copper Smelter": 75,
+        "img": "images/fabrics/iconCopperSmelter.png"
+      },
+      {
+        "Copper Mine": 75,
+        "img": "images/fabrics/iconCopperMine.png"
+      },
+      {
+        "Charcoal Burner's Hut": 50,
+        "img": "images/fabrics/iconCoal1.png"
+      }
+    ],
+    "glasses": [
+      {
+        "Optician's Workshop": 100,
+        "img": "images/goods/iconBrillen.png"
+      },
+      {
+        "Quarz Quary": 75,
+        "img": "images/fabrics/iconQuarz.png"
+      },
+      {
+        "Copper Smelter": 75,
+        "img": "images/fabrics/iconCopperSmelter.png"
+      },
+      {
+        "Copper Mine": 75,
+        "img": "images/fabrics/iconCopperMine.png"
+      },
+      {
+        "Charcoal Burner's Hut": 50,
+        "img": "images/fabrics/iconCoal1.png"
+      }
+    ],
+    "dates": [
+      {
+        "Date plantation": 100,
+        "img": "images/goods/iconDatteln.png"
+      }
+    ],
+    "milk": [
+      {
+        "Goat farm": 100,
+        "img": "images/goods/iconMilch.png"
+      }
+    ],
+    "carpets": [
+      {
+        "Carpet workshop": 100,
+        "img": "images/goods/iconTeppiche.png"
+      },
+      {
+        "Indigo farm": 100,
+        "img": "images/fabrics/iconIndigo.png"
+      },
+      {
+        "Silk plantation": 100,
+        "img": "images/fabrics/iconSilk.png"
+      }
+    ],
+    "coffee": [
+      {
+        "Roasting house": 100,
+        "img": "images/goods/iconKaffee.png"
+      },
+      {
+        "Coffee plantation": 100,
+        "img": "images/fabrics/iconCoffeePlantation.png"
+      }
+    ],
+    "pearl necklaces": [
+      {
+        "Pearl Workshop": 100,
+        "img": "images/goods/iconPerlenketten.png"
+      },
+      {
+        "Pearl Fisher's Hut": 100,
+        "img": "images/fabrics/iconPerlFisher.png"
+      }
+    ],
+    "parfumes": [
+      {
+        "Perfumery": 100,
+        "img": "images/goods/iconDuftwasser.png"
+      },
+      {
+        "Rose Nursery": 300,
+        "img": "images/fabrics/iconRoseNursery.png"
+      }
+    ],
+    "marzipans": [
+      {
+        "Confectioner's Workshop": 100,
+        "img": "images/goods/iconMarzipan.png"
+      },
+      {
+        "Almond plantation": 200,
+        "img": "images/fabrics/iconAlmond.png"
+      },
+      {
+        "Sugar mill": 100,
+        "img": "images/fabrics/iconSugar.png"
+      },
+      {
+        "Sugarcane Plantation": 200,
+        "img": "images/fabrics/iconSugarcane.png"
+      }
+    ]
   }
+}
