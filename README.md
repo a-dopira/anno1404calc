@@ -18,6 +18,7 @@ you can download your own XML content with needed data
 
 XML example:
 
+```xml
 <Anno1404Calculator version="1.0" exportDate="2025-07-15T22:37:45.048Z">
     <Inhabitants>
         <Inhabitant index="0" type="beggar" count="3000"/>
@@ -58,6 +59,7 @@ XML example:
     </MemorizedAmounts>
     <Metadata calculatorVersion="2.0" gameVersion="Anno1404"/>
 </Anno1404Calculator>
+```
 
 you can download CSV file with needs from Supply page
 
