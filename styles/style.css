@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
   color: #f4e4c1;
   min-height: 100vh;
@@ -171,7 +171,7 @@ body {
 
 .multiplier-display {
   font-size: 10px;
-  color: #4CAF50;
+  color: #4caf50;
   font-weight: bold;
 }
 
@@ -299,7 +299,7 @@ body {
 
 .amount-cell {
   font-weight: bold;
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 .utilization-bar {
@@ -329,7 +329,8 @@ body {
 .lupe {
   width: 20px;
   height: 20px;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f4e4c1"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>') no-repeat center;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f4e4c1"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>')
+    no-repeat center;
   background-size: contain;
   cursor: pointer;
   display: none;
@@ -425,7 +426,7 @@ body {
   .inhabitants-row {
     justify-content: center;
   }
-  
+
   .items-row {
     justify-content: center;
   }
@@ -436,36 +437,36 @@ body {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .nav {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .inhabitants-row {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .items-row {
     grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
     gap: 10px;
   }
-  
+
   .controls {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   .data-table {
     font-size: 12px;
   }
-  
+
   .data-table th,
   .data-table td {
     padding: 5px;
   }
-  
+
   .modal-content {
     margin: 20px;
     max-width: calc(100% - 40px);
@@ -476,24 +477,24 @@ body {
   .wrapper {
     padding: 10px;
   }
-  
+
   .input-section {
     padding: 20px;
   }
-  
+
   .inhabitant-group {
     min-width: 100px;
   }
-  
+
   .inhabitant-input,
   .house-input {
     width: 60px;
   }
-  
+
   .data-table {
     font-size: 10px;
   }
-  
+
   .data-table th,
   .data-table td {
     padding: 3px;
@@ -519,14 +520,24 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .inhabitant-group,

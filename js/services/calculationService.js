@@ -52,14 +52,15 @@ export class CalculationService {
       const buildingRatio = building.ratio / 100;
       const requiredBuildings = buildingMultiplier * buildingRatio;
       const actualBuildings = Math.ceil(requiredBuildings);
-      const utilization = actualBuildings > 0 ? requiredBuildings / actualBuildings : 0;
+      const utilization =
+        actualBuildings > 0 ? requiredBuildings / actualBuildings : 0;
 
       return {
         ...building,
         required: requiredBuildings,
         actual: actualBuildings,
         utilization: utilization,
-        utilizationPercent: Math.round(utilization * 100)
+        utilizationPercent: Math.round(utilization * 100),
       };
     });
   }

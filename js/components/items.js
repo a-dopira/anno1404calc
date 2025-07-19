@@ -1,8 +1,8 @@
-import { dataService } from '../services/dataService.js';
+import { dataService } from "../services/dataService.js";
 
 export class ItemsComponent {
   constructor() {
-    this.container = document.querySelector('.items-row');
+    this.container = document.querySelector(".items-row");
     this.multipliers = [];
   }
 
@@ -14,13 +14,13 @@ export class ItemsComponent {
 
   render() {
     const goods = dataService.getGoods();
-    this.container.innerHTML = '';
+    this.container.innerHTML = "";
 
     goods.forEach((good, index) => {
       const imagePath = dataService.getGoodImage(good.img);
-      
-      const group = document.createElement('div');
-      group.className = 'item-group';
+
+      const group = document.createElement("div");
+      group.className = "item-group";
       group.innerHTML = `
         <div class="item-icon" title="${good.title}">
           <img src="${imagePath}" alt="${good.title}" />
@@ -33,15 +33,18 @@ export class ItemsComponent {
         </select>
         <span class="multiplier-display">+0%</span>
       `;
-      
+
       this.container.appendChild(group);
     });
   }
 
   bindEvents() {
-    const selects = this.container.querySelectorAll('.item-select');
-    selects.forEach(select => {
-      select.addEventListener('change', this.updateMultiplierDisplay.bind(this));
+    const selects = this.container.querySelectorAll(".item-select");
+    selects.forEach((select) => {
+      select.addEventListener(
+        "change",
+        this.updateMultiplierDisplay.bind(this),
+      );
     });
   }
 
@@ -61,24 +64,24 @@ export class ItemsComponent {
 
   setMultipliers(multipliers) {
     this.multipliers = [...multipliers];
-    const selects = this.container.querySelectorAll('.item-select');
-    
+    const selects = this.container.querySelectorAll(".item-select");
+
     selects.forEach((select, index) => {
       const multiplier = multipliers[index] || 0;
       const selectValue = multiplier / 25;
       select.value = selectValue.toString();
-      
+
       const display = select.nextElementSibling;
       display.textContent = `+${multiplier}%`;
     });
   }
 
   reset() {
-    const selects = this.container.querySelectorAll('.item-select');
-    selects.forEach(select => {
-      select.value = '0';
+    const selects = this.container.querySelectorAll(".item-select");
+    selects.forEach((select) => {
+      select.value = "0";
       const display = select.nextElementSibling;
-      display.textContent = '+0%';
+      display.textContent = "+0%";
     });
     this.multipliers = [];
   }

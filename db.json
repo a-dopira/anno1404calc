@@ -59,18 +59,42 @@
     { "title": "cider", "img": "images/goods/iconMost.png", "id": 5 },
     { "title": "beer", "img": "images/goods/iconBier.png", "id": 6 },
     { "title": "wine", "img": "images/goods/iconWein.png", "id": 7 },
-    { "title": "linen garments", "img": "images/goods/iconLeinenkutten.png", "id": 8 },
-    { "title": "leather jerkins", "img": "images/goods/iconLederwaemse.png", "id": 9 },
-    { "title": "fur coats", "img": "images/goods/iconPelzmaentel.png", "id": 10 },
-    { "title": "brocade robes", "img": "images/goods/iconBrokatgewaender.png", "id": 11 },
+    {
+      "title": "linen garments",
+      "img": "images/goods/iconLeinenkutten.png",
+      "id": 8
+    },
+    {
+      "title": "leather jerkins",
+      "img": "images/goods/iconLederwaemse.png",
+      "id": 9
+    },
+    {
+      "title": "fur coats",
+      "img": "images/goods/iconPelzmaentel.png",
+      "id": 10
+    },
+    {
+      "title": "brocade robes",
+      "img": "images/goods/iconBrokatgewaender.png",
+      "id": 11
+    },
     { "title": "books", "img": "images/goods/iconBuecher.png", "id": 12 },
-    { "title": "candlesticks", "img": "images/goods/iconKerzenleuchter.png", "id": 13 },
+    {
+      "title": "candlesticks",
+      "img": "images/goods/iconKerzenleuchter.png",
+      "id": 13
+    },
     { "title": "glasses", "img": "images/goods/iconBrillen.png", "id": 14 },
     { "title": "dates", "img": "images/goods/iconDatteln.png", "id": 15 },
     { "title": "milk", "img": "images/goods/iconMilch.png", "id": 16 },
     { "title": "carpets", "img": "images/goods/iconTeppiche.png", "id": 17 },
     { "title": "coffee", "img": "images/goods/iconKaffee.png", "id": 18 },
-    { "title": "pearl necklaces", "img": "images/goods/iconPerlenketten.png", "id": 19 },
+    {
+      "title": "pearl necklaces",
+      "img": "images/goods/iconPerlenketten.png",
+      "id": 19
+    },
     { "title": "parfumes", "img": "images/goods/iconDuftwasser.png", "id": 20 },
     { "title": "marzipans", "img": "images/goods/iconMarzipan.png", "id": 21 }
   ],
@@ -78,28 +102,28 @@
   "productionRequirements": {
     "fish": {
       "consumers": [
-        { 
-          "type": "Beggar", 
+        {
+          "type": "Beggar",
           "index": 0,
           "ratio": 285
         },
-        { 
-          "type": "Peasant", 
+        {
+          "type": "Peasant",
           "index": 1,
           "ratio": 200
         },
-        { 
-          "type": "Citizen", 
+        {
+          "type": "Citizen",
           "index": 2,
           "ratio": 500
         },
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 909
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1250
         }
@@ -108,18 +132,18 @@
 
     "spices": {
       "consumers": [
-        { 
-          "type": "Citizen", 
+        {
+          "type": "Citizen",
           "index": 2,
           "ratio": 500
         },
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 909
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1250
         }
@@ -128,13 +152,13 @@
 
     "bread": {
       "consumers": [
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 727
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1025
         }
@@ -143,8 +167,8 @@
 
     "meat": {
       "consumers": [
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1136
         }
@@ -153,13 +177,13 @@
 
     "cider": {
       "consumers": [
-        { 
-          "type": "Beggar", 
+        {
+          "type": "Beggar",
           "index": 0,
           "ratio": 500
         },
-        { 
-          "type": "Peasant", 
+        {
+          "type": "Peasant",
           "index": 1,
           "ratio": 340,
           "condition": {
@@ -173,8 +197,8 @@
           },
           "fallbackRatio": 500
         },
-        { 
-          "type": "Citizen", 
+        {
+          "type": "Citizen",
           "index": 2,
           "ratio": 340,
           "condition": {
@@ -187,13 +211,13 @@
             ]
           }
         },
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 652
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1153
         }
@@ -202,8 +226,8 @@
 
     "beer": {
       "consumers": [
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 625,
           "condition": {
@@ -214,8 +238,8 @@
             ]
           }
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1071
         }
@@ -224,15 +248,13 @@
 
     "wine": {
       "consumers": [
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1000,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 4, "operator": ">=", "value": 1500 }
-            ]
+            "conditions": [{ "inhabitant": 4, "operator": ">=", "value": 1500 }]
           }
         }
       ]
@@ -240,18 +262,18 @@
 
     "linen_garments": {
       "consumers": [
-        { 
-          "type": "Citizen", 
+        {
+          "type": "Citizen",
           "index": 2,
           "ratio": 476
         },
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 1052
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 2500
         }
@@ -260,8 +282,8 @@
 
     "leather_jerkins": {
       "consumers": [
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 1428,
           "condition": {
@@ -273,8 +295,8 @@
           },
           "fallbackRatio": 690
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 2500
         }
@@ -283,15 +305,13 @@
 
     "fur_coats": {
       "consumers": [
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1562,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 4, "operator": ">=", "value": 950 }
-            ]
+            "conditions": [{ "inhabitant": 4, "operator": ">=", "value": 950 }]
           }
         }
       ]
@@ -299,15 +319,13 @@
 
     "brocade robes": {
       "consumers": [
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 2112,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 4, "operator": ">", "value": 0 }
-            ]
+            "conditions": [{ "inhabitant": 4, "operator": ">", "value": 0 }]
           }
         }
       ]
@@ -315,8 +333,8 @@
 
     "books": {
       "consumers": [
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 1875,
           "condition": {
@@ -327,8 +345,8 @@
             ]
           }
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 3333
         }
@@ -337,19 +355,17 @@
 
     "candlesticks": {
       "consumers": [
-        { 
-          "type": "Patrician", 
+        {
+          "type": "Patrician",
           "index": 3,
           "ratio": 2500,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 4, "operator": ">=", "value": 3000 }
-            ]
+            "conditions": [{ "inhabitant": 4, "operator": ">=", "value": 3000 }]
           }
         },
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 3333,
           "condition": {
@@ -365,15 +381,13 @@
 
     "glasses": {
       "consumers": [
-        { 
-          "type": "Nobelman", 
+        {
+          "type": "Nobelman",
           "index": 4,
           "ratio": 1709,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 4, "operator": ">=", "value": 1709 }
-            ]
+            "conditions": [{ "inhabitant": 4, "operator": ">=", "value": 1709 }]
           }
         }
       ]
@@ -381,13 +395,13 @@
 
     "dates": {
       "consumers": [
-        { 
-          "type": "Nomad", 
+        {
+          "type": "Nomad",
           "index": 5,
           "ratio": 450
         },
-        { 
-          "type": "Envoy", 
+        {
+          "type": "Envoy",
           "index": 6,
           "ratio": 600
         }
@@ -396,8 +410,8 @@
 
     "milk": {
       "consumers": [
-        { 
-          "type": "Nomad", 
+        {
+          "type": "Nomad",
           "index": 5,
           "ratio": 436,
           "condition": {
@@ -408,8 +422,8 @@
             ]
           }
         },
-        { 
-          "type": "Envoy", 
+        {
+          "type": "Envoy",
           "index": 6,
           "ratio": 666
         }
@@ -418,20 +432,18 @@
 
     "carpets": {
       "consumers": [
-        { 
-          "type": "Nomad", 
+        {
+          "type": "Nomad",
           "index": 5,
           "ratio": 909,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 5, "operator": ">=", "value": 295 }
-            ]
+            "conditions": [{ "inhabitant": 5, "operator": ">=", "value": 295 }]
           },
           "fallbackRatio": 295
         },
-        { 
-          "type": "Envoy", 
+        {
+          "type": "Envoy",
           "index": 6,
           "ratio": 1500
         }
@@ -440,8 +452,8 @@
 
     "coffee": {
       "consumers": [
-        { 
-          "type": "Envoy", 
+        {
+          "type": "Envoy",
           "index": 6,
           "ratio": 1000
         }
@@ -450,15 +462,13 @@
 
     "pearl necklaces": {
       "consumers": [
-        { 
-          "type": "Envoy", 
+        {
+          "type": "Envoy",
           "index": 6,
           "ratio": 751,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 6, "operator": ">=", "value": 1040 }
-            ]
+            "conditions": [{ "inhabitant": 6, "operator": ">=", "value": 1040 }]
           }
         }
       ]
@@ -466,15 +476,13 @@
 
     "parfumes": {
       "consumers": [
-        { 
-          "type": "Envoy", 
+        {
+          "type": "Envoy",
           "index": 6,
           "ratio": 2600,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 6, "operator": ">=", "value": 2600 }
-            ]
+            "conditions": [{ "inhabitant": 6, "operator": ">=", "value": 2600 }]
           }
         }
       ]
@@ -482,15 +490,13 @@
 
     "marzipans": {
       "consumers": [
-        { 
-          "type": "Envoy", 
+        {
+          "type": "Envoy",
           "index": 6,
           "ratio": 2453,
           "condition": {
             "type": "AND",
-            "conditions": [
-              { "inhabitant": 6, "operator": ">=", "value": 4360 }
-            ]
+            "conditions": [{ "inhabitant": 6, "operator": ">=", "value": 4360 }]
           }
         }
       ]
